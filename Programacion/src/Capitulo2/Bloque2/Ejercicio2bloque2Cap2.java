@@ -28,9 +28,8 @@ public class Ejercicio2bloque2Cap2 {
 		int suma3 = 0;
 		int suma4 = 0;
 		
-		{
 			if (var1 < 0 || var2 < 0 || var3 < 0 || var4 < 0 || var5 < 0 ) {
-				System.out.println("\nERROR. Los números deben de ser 0 o mayores que 0");
+				JOptionPane.showMessageDialog(null,"ERROR. Los números deben de ser 0 o mayores que 0");
 			}
 			else {	
 				 {
@@ -106,7 +105,7 @@ public class Ejercicio2bloque2Cap2 {
 		System.out.println("Se han introducido " + suma3 + " números entre 25 y 250" );
 		System.out.println("Se han introducido " + suma4 + " números mayores que 250");
 		}
-		}
+		
 	}
 	}
 
