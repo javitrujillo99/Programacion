@@ -3,12 +3,11 @@ package Capitulo2.Bloque3;
 import javax.swing.JOptionPane;
 
 public class ejercicio1cap2bloque3 {
-
+	
 	public static void main(String[] args) {
 		int num = Integer.parseInt(JOptionPane.showInputDialog("Introduzca nota: "));
 		String mensaje = "";
 		switch (num) {
-		
 		case 0:
 		case 1:
 			mensaje = "Muy deficiente";
@@ -36,5 +35,4 @@ public class ejercicio1cap2bloque3 {
 		//Finalmente informamos al usuario de la nota
 		JOptionPane.showMessageDialog(null, "Nota: " + mensaje);
 	}
-
 }
