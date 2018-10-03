@@ -5,10 +5,7 @@ import javax.swing.JOptionPane;
 public class Ejercicio2Cap2Bloque3 {
 
 	public static void main(String[] args) {
-		//NO ENTIENDO POR QUÉ NO SALE BIEN LA RAÍZ CÚBICA Y LA RAÍZ ENÉSIMA, PREGUNTAR A RAFA.
-		
-		
-		String menu = "                        MENÚ\n"
+		String menu = "                        MENÚ\n"  //NO FUNCIONA EL \t Y LO HE HECHO CON ESPACIOS.
 				+ "1.-Suma de dos números\n"
 				+ "2.-Resta de dos números\n"
 				+ "3.-Multiplicación de dos números\n"
@@ -34,9 +31,7 @@ public class Ejercicio2Cap2Bloque3 {
 		int division = num1 / num2;
 		int resto = num1 % num2;
 		
-		
 		switch (opcion) {
-		
 		case 1: //Suma de dos números
 			JOptionPane.showMessageDialog(null, "Resultado = " + suma);
 			break;
@@ -54,7 +49,7 @@ public class Ejercicio2Cap2Bloque3 {
 		else {
 		int num = Integer.parseInt(JOptionPane.showInputDialog("Introduzca un número: "));
 		int raiz = (int) Math.sqrt(num);
-		int raizcubica= (int) Math.pow(num, (1/3));
+		float raizcubica=  (float) Math.pow(num, ((float)1/3));
 		int cuadrado = num * num;
 		int cubo = cuadrado * num;
 		
@@ -67,7 +62,7 @@ public class Ejercicio2Cap2Bloque3 {
 			break;
 		case 7: //La raíz enésima de un número, n lo indica el usuario.
 			int n = Integer.parseInt(JOptionPane.showInputDialog("Introduzca el índice de la raíz: "));
-			int raizenesima = (int) Math.pow(num, (1/n));
+			float raizenesima = (float) Math.pow(num, ((float)1/n));
 			JOptionPane.showMessageDialog(null, "Resultado = " + raizenesima);
 			break;
 		case 8: //Un número elevado al cuadrado
