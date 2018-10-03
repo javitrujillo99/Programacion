@@ -8,7 +8,7 @@ public class Ejercicio2Cap2Bloque3 {
 		//NO ENTIENDO POR QUÉ NO SALE BIEN LA RAÍZ CÚBICA Y LA RAÍZ ENÉSIMA, PREGUNTAR A RAFA.
 		
 		
-		String menu = "Menu\n"
+		String menu = "                        MENÚ\n"
 				+ "1.-Suma de dos números\n"
 				+ "2.-Resta de dos números\n"
 				+ "3.-Multiplicación de dos números\n"
@@ -18,7 +18,7 @@ public class Ejercicio2Cap2Bloque3 {
 				+ "7. Raíz enésima de un número\n"
 				+ "8. Cuadrado de un número\n"
 				+ "9. Número elevado al cubo\n"
-				+ "10.- Número elevado a lo que indique el usuario";
+				+ "10.-Número elevado a lo que indique el usuario";
 		
 		int opcion = Integer.parseInt(JOptionPane.showInputDialog(menu));
 		if (opcion < 1 || opcion > 10) {
