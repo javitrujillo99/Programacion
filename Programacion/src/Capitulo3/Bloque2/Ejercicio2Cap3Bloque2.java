@@ -13,7 +13,7 @@ public class Ejercicio2Cap3Bloque2 {
 				mayor = numero;
 			}
 		}
-		JOptionPane.showMessageDialog(null, "El mayoe es: " + mayor);
+		JOptionPane.showMessageDialog(null, "El mayor es: " + mayor);
 	}
 
 }
