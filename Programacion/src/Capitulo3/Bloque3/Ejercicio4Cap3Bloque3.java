@@ -2,25 +2,25 @@ package Capitulo3.Bloque3;
 
 import javax.swing.JOptionPane;
 
-public class Ejercicio1Cap3Bloque3 {
+public class Ejercicio4Cap3Bloque3 {
 
 	public static void main(String[] args) {
-		int numero = 1, sumatorio = 0;
+		int menor = 0, numero = 1;
 		String mensaje = "Introduzca número (0 -> Terminar)";
 		
-		for (int i = 0; numero != 0; i++) {
-			if (i == 0) { // Primera iteración
+		for (int i = 1; numero != 0; i++) {
+			if (i == 1) { //Primera iteración
 				numero = Integer.parseInt(JOptionPane.showInputDialog(mensaje));
-				sumatorio += numero;
+				menor = numero;
 			}
 			else {
 				numero = Integer.parseInt(JOptionPane.showInputDialog(mensaje));
-				sumatorio += numero;
+				if (numero < menor && numero != 0) {
+				menor = numero;
+				}
 			}
 		}
-		
-		JOptionPane.showMessageDialog(null, "La suma de todos los números es : " + sumatorio);
-		
+		JOptionPane.showMessageDialog(null, "El menor es: " + menor);
 	}
 
 }
