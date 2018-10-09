@@ -8,8 +8,8 @@ public class Ejercicio1Cap3Bloque3 {
 		int numero = 1, sumatorio = 0;
 		String mensaje = "Introduzca número (0 -> Terminar)";
 		
-		for (int i = 0; numero != 0; i++) {
-			if (i == 0) { // Primera iteración
+		for (int i = 1; numero != 0; i++) {
+			if (i == 1) { // Primera iteración
 				numero = Integer.parseInt(JOptionPane.showInputDialog(mensaje));
 				sumatorio += numero;
 			}

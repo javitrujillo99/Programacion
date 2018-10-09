@@ -11,18 +11,18 @@ public class Ejercicio7Cap3Bloque3 {
 			numero = Integer.parseInt(JOptionPane.showInputDialog(mensaje));
 			if (i == 0) { //Primera iteración
 				if (numero > 0) {
-					contadorNumerosPositivos += 1; 
+					contadorNumerosPositivos++; 
 				}
 				if (numero < 0) {
-					contadorNumerosNegativos += 1; 
+					contadorNumerosNegativos++; 
 				}
 			}
 			else {
 				if (numero > 0) {
-					contadorNumerosPositivos += 1; 
+					contadorNumerosPositivos++; 
 				}
 				if (numero < 0) {
-					contadorNumerosNegativos += 1; 
+					contadorNumerosNegativos++; 
 				}
 			}
 		}

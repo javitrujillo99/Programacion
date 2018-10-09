@@ -21,7 +21,5 @@ public class Ejercicio6Cap3Bloque3 {
 				}
 			}
 		}
-
 	}
-
 }
