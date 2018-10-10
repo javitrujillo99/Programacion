@@ -1,25 +1,17 @@
-package Capitulo3.Bloque3;
+package Capitulo3.Bloque3.EjerciciosConWhile;
 
 import javax.swing.JOptionPane;
 
 public class Ejercicio2Cap3Bloque3 {
 
 	public static void main(String[] args) {
-		float numero = 1, acumulador = 0, i;
+		float numero = 1, acumulador = 0, i = 0;
 		String mensaje = "Introduzca número (0 -> Terminar)";
-		for (i = 0; numero != 0; i++) {
-			if (i == 0) { // Primera iteración
+		while (numero != 0) {
 				numero = Integer.parseInt(JOptionPane.showInputDialog(mensaje));
 				acumulador += numero;
+				i++;
 			}
-			else {
-				numero = Integer.parseInt(JOptionPane.showInputDialog(mensaje));
-				acumulador += numero;
-			}
-		}
-		
 		JOptionPane.showMessageDialog(null, "La media de todos los números es : " + (acumulador / (i - 1)));
-
 	}
-
 }
