@@ -19,7 +19,7 @@ public class Ejercicio3Cap5Bloque1 {
 				contadorNulos++;
 			}
 		}
-		if (contadorNulos == 150) {
+		if (contadorNulos == array.length) {
 			JOptionPane.showMessageDialog(null, "Valor no encontrado en la lista");
 		}
 	}
