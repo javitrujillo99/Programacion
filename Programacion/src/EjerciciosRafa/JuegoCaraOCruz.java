@@ -10,7 +10,7 @@ public class JuegoCaraOCruz {
 			int aleatorio = (int) Math.round(Math.random());
 			num = Integer.parseInt(JOptionPane.showInputDialog("ELIJA: (AL MEJOR DE 5) \n CARA = 0 \n CRUZ = 1"));
 			if (num < 0 || num > 1) {
-				JOptionPane.showMessageDialog(null, "ERROR, TIENE QUE SER 0 O 1 PRINGAO");
+				JOptionPane.showMessageDialog(null, "ERROR, TIENE QUE SER 0 O 1 TOLAI");
 				System.exit(0);
 			}
 			else
