@@ -19,7 +19,7 @@ public class Ejercicio1cap1 {
 		str = JOptionPane.showInputDialog("Introduzca un número de tipo double: ");
 		double var3 = Double.parseDouble(str);
 		
-		System.out.println("Los números introducidos son: " + var1 + ", " + var2 + "y " + var3);
+		System.out.println("Los números introducidos son: " + var1 + ", " + var2 + " y " + var3);
 
 	}
 
