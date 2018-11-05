@@ -12,6 +12,7 @@ public class Main {
 		System.out.println("El mayor es: " + mayor(num1, num2));
 	}
 	
+	//Ejercicio 1
 	public static float media4Valores(int num1, int num2, int num3, float num4) {
 		float media = (num1 + num2 + num3 + num4) / 4;
 		return media;
