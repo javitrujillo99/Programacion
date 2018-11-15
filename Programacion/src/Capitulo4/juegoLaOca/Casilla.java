@@ -6,9 +6,11 @@ public class Casilla {
 	private Casilla destino;
 	private int turnos;
 	private String mensajeEspecial;
+	
 	/**
 	 * 
 	 */
+	
 	public Casilla() {
 		super();
 	}
@@ -19,6 +21,7 @@ public class Casilla {
 	 * @param turnos
 	 * @param mensajeEspecial
 	 */
+	
 	public Casilla(int orden, String nombre, Casilla destino, int turnos, String mensajeEspecial) {
 		super();
 		this.orden = orden;
@@ -34,6 +37,7 @@ public class Casilla {
 	 * @param orden
 	 * @param nombre
 	 */
+	
 	public Casilla(int orden, String nombre) {
 		super();
 		this.orden = orden;
@@ -69,5 +73,4 @@ public class Casilla {
 	public void setMensajeEspecial(String mensajeEspecial) {
 		this.mensajeEspecial = mensajeEspecial;
 	}
-
 }

@@ -7,11 +7,21 @@ public class Tablero {
 	public static String msjDado = "De dado a dado y tiro porque me ha tocado";
 	Casilla casillas[] = new Casilla[63];
 	
+	private static Tablero tablero = null;
+	
 	
 	
 	public Tablero() {
 		super();
 		inicializaTablero();
+	}
+	
+	
+	public static Tablero getTablero () {
+		if (tablero == null) {
+		tablero = new Tablero();
+		}
+		return tablero;
 	}
 
 	public void imprimeTablero () {
@@ -90,35 +100,35 @@ public class Tablero {
 				casillas[4].setDestino(casillas[8]); // Oca
 				casillas[5].setDestino(casillas[11]); // Puente
 				casillas[11].setDestino(casillas[5]); // Puente
-				casillas[8].setDestino(casillas[13]);// Oca
-				casillas[13].setDestino(casillas[17]);// Oca
-				casillas[17].setDestino(casillas[22]);// Oca
-				casillas[22].setDestino(casillas[26]);// Oca
-				casillas[25].setDestino(casillas[52]);// Dado
-				casillas[52].setDestino(casillas[25]);// Dado
-				casillas[26].setDestino(casillas[31]);// Oca
-				casillas[31].setDestino(casillas[35]);// Oca 
-				casillas[35].setDestino(casillas[40]);// Oca 
-				casillas[40].setDestino(casillas[44]);// Oca 
-				casillas[41].setDestino(casillas[29]);// Laberinto 
-				casillas[44].setDestino(casillas[49]);// Oca 
-				casillas[49].setDestino(casillas[53]);// Oca 
-				casillas[53].setDestino(casillas[58]);// Oca 
-				casillas[57].setDestino(casillas[0]);// Muerte 
-				casillas[58].setDestino(casillas[62]);// Oca 
+				casillas[8].setDestino(casillas[13]); // Oca
+				casillas[13].setDestino(casillas[17]); // Oca
+				casillas[17].setDestino(casillas[22]); // Oca
+				casillas[22].setDestino(casillas[26]); // Oca
+				casillas[25].setDestino(casillas[52]); // Dado
+				casillas[52].setDestino(casillas[25]); // Dado
+				casillas[26].setDestino(casillas[31]); // Oca
+				casillas[31].setDestino(casillas[35]); // Oca 
+				casillas[35].setDestino(casillas[40]); // Oca 
+				casillas[40].setDestino(casillas[44]); // Oca 
+				casillas[41].setDestino(casillas[29]); // Laberinto 
+				casillas[44].setDestino(casillas[49]); // Oca 
+				casillas[49].setDestino(casillas[53]); // Oca 
+				casillas[53].setDestino(casillas[58]); // Oca 
+				casillas[57].setDestino(casillas[0]); // Muerte 
+				casillas[58].setDestino(casillas[62]); // Oca 
 	}
 
 	/**
 	 * @return the casillas
 	 */
-	public Casilla[] getTablero() {
+	public Casilla[] getCasillas() {
 		return casillas;
 	}
 
 	/**
 	 * @param tablero the casillas to set
 	 */
-	public void setTablero(Casilla[] casillas) {
+	public void setCasillas(Casilla[] casillas) {
 		this.casillas = casillas;
 	}
 	
