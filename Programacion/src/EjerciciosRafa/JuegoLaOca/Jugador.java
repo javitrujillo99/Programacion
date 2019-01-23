@@ -1,6 +1,5 @@
 package EjerciciosRafa.JuegoLaOca;
 
-import javax.swing.JOptionPane;
 
 public class Jugador {   
 	private String nombre;
