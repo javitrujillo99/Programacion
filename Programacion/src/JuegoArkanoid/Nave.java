@@ -1,35 +1,35 @@
 package JuegoArkanoid;
 
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+
 
 public class Nave extends Objeto {
-	protected static final int NAVE_SPEED = 4;
-	protected int vx;
-	protected int vy;
-	private boolean up,down,left,right;
+	protected static final float NAVE_SPEED = (float) 3.5;
+	protected float vx;
+	private boolean left,right;
 	
 	public Nave(Stage stage) {
 		super(stage);
-		setSpriteName("pastillaBuena1.png");
+		setSpriteNames(new String[] {("nave.png")});
 	}
 	
 	public void act() {
 		super.act();
 		x+=vx;
-		y+=vy;
-		if (x < 0 || x > Stage.WIDTH)
-		  vx = -vx;
-		if (y < 0 || y > Stage.HEIGHT)
-		  vy = -vy;
+		if (x < 0 ) {
+			x = 0;
+		}
+		if (x > Stage.WIDTH - getWidth()) {
+			x = Stage.WIDTH - getWidth();
+		}
 	}
 
-	public int getVx() { return vx; }
+	public float getVx() { return vx; }
 	public void setVx(int i) {vx = i;	}
- 	public int getVy() { return vy; }
- 	public void setVy(int i) {vy = i;	}
- 	
+	
  	protected void updateSpeed() {
- 	  	vx=0;vy=0;
+ 	  	vx=0;
  	  	if (left) vx = -NAVE_SPEED;
  	  	if (right) vx = NAVE_SPEED;
  	  }
@@ -49,5 +49,10 @@ public class Nave extends Objeto {
  	  	}
  	  	updateSpeed();
  	  }
+ 	  
+ 	public void mouseMoved(MouseEvent e) {
+ 		this.x = e.getX() - (this.width / 2);
+ 	}
+ 	
  	
 }

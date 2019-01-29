@@ -7,10 +7,12 @@ protected float vy;
 	
 	public Pelota(Stage stage) {
 		super(stage);
-		setSpriteName("Baloncesto.png");
+		setSpriteNames( new String[] {("Baloncesto.png")});
+		setFrameSpeed(35);
 	}
 	
 	public void act() {
+		super.act();
 		x+=vx;
 		if (x < 0 || x > (Stage.WIDTH - 18)) {
 			
