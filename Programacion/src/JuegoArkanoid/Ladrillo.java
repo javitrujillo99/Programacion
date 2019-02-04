@@ -39,7 +39,6 @@ public class Ladrillo extends Objeto {
 	public void collision(Objeto o) {
 		if (o instanceof Pelota) {
 			remove();
-			setFrameSpeed(35);
 		}
 	}
 	

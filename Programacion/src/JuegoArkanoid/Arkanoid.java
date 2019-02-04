@@ -23,12 +23,15 @@ public class Arkanoid extends Canvas implements Stage {
 	private BufferStrategy strategy;
 	private long usedTime;
 	
-	private SpriteCache spriteCache;
+	private SpriteCache spriteCache = new SpriteCache();
+	private SoundCache soundCache;
 	private List<Objeto> objetos = new ArrayList<Objeto>();
 	private Nave nave;
+	private List<Explosion> explosion = new ArrayList<Explosion>();
 
 	public Arkanoid() {
 		spriteCache = new SpriteCache();
+		soundCache = new SoundCache();
 
 		JFrame ventana = new JFrame("Arkanoid");
 		JPanel panel = (JPanel)ventana.getContentPane();
@@ -67,10 +70,11 @@ public class Arkanoid extends Canvas implements Stage {
 	 * 
 	 */
 	public void initWorld() {
+	  soundCache.playSound("Arkanoid-start-of-stage.wav");
       Pelota p = new Pelota(this);
-      	p.setX(60);
+      	p.setX(250);
 	    p.setVx(2);
-	    p.setY(40);
+	    p.setY(300);
 	    p.setVy(2);
 	    objetos.add(p);
 	    
@@ -111,6 +115,33 @@ public class Arkanoid extends Canvas implements Stage {
 			Objeto p = (Objeto)objetos.get(i);
 			p.act();
 		}
+		int i = 0;
+		while (i < objetos.size()) {
+			Objeto m = (Objeto)objetos.get(i);
+			if (m.markedForRemoval) {
+				Explosion ex = new Explosion(this);
+				ex.setX(m.getX());
+				ex.setY(m.getY());
+				explosion.add(ex);
+				objetos.remove(i);
+				soundCache.playSound("Explosion.wav");
+			} else {
+				i++;
+			}
+		}
+		for (i = 0; i < objetos.size(); i++) {
+			Objeto m = (Objeto)objetos.get(i);
+			if (m.markedForRemoval) {
+				explosion.remove(i);
+			}
+			else {
+				i++;
+			}
+		}
+		for (i = 0; i < explosion.size(); i++) {
+			Objeto m = (Objeto) explosion.get(i);
+			m.act();
+		}
 		nave.act();
 	}
 	
@@ -141,6 +172,12 @@ public class Arkanoid extends Canvas implements Stage {
 			}		
 		}
 		
+		for (Explosion explosion : explosion) {
+			if (explosion.markedForRemoval == false) {
+				explosion.paint(g);
+			}
+		}
+		
 		g.setColor(Color.white);
 		if (usedTime > 0)
 		  g.drawString(String.valueOf(1000/usedTime)+" fps",0,Stage.HEIGHT-50);
@@ -161,20 +198,17 @@ public class Arkanoid extends Canvas implements Stage {
 	 * 
 	 */
 	public void checkCollisions() {
-		Rectangle naveBounds = nave.getBounds();
 		for (int i = 0; i < objetos.size(); i++) {
 			Objeto a1 = (Objeto)objetos.get(i);
 			Rectangle r1 = a1.getBounds();
-			if (r1.intersects(naveBounds)) {
-				nave.collision(a1);
-				a1.collision(nave);
-			}
+
 		  for (int j = i+1; j < objetos.size(); j++) {
 		  	Objeto a2 = (Objeto)objetos.get(j);
 		  	Rectangle r2 = a2.getBounds();
 		  	if (r1.intersects(r2)) {
 		  		a1.collision(a2);
 		  		a2.collision(a1);
+		  		//soundCache.playSound("Arkanoid-SFX-01.wav");
 		  	}
 		  }
 		}

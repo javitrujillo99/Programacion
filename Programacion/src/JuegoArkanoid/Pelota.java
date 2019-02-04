@@ -23,6 +23,16 @@ protected float vy;
 		  vy = -vy;
 		}
 }
+	
+	public void collision(Objeto o) {
+		if (o instanceof Ladrillo) {
+			vx = -vx;
+			vy = -vy;
+		}
+		if (o instanceof Nave) {
+			vy = -vy;
+		}
+	}
 
 	public float getVx() { return vx; }
 	public void setVx(int i) {vx = i;	}
