@@ -54,5 +54,5 @@ public class Nave extends Objeto {
  		this.x = e.getX() - (this.width / 2);
  	}
  	
- 	
+
 }

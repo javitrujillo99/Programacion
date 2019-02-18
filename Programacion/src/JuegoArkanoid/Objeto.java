@@ -6,7 +6,8 @@ import java.awt.image.BufferedImage;
 
 
 public class Objeto {
-	protected int x,y;
+	protected int x;
+	protected int y;
 	protected int width, height;
 	protected String[] spriteNames;
 	protected int t;
@@ -14,7 +15,7 @@ public class Objeto {
 	protected int currentFrame;
 	protected Stage stage;
 	protected SpriteCache spriteCache;
-	protected boolean markedForRemoval;
+	protected boolean markedForRemoval = false;
 	protected String spriteActual;
 	
 	public Objeto(Stage stage) {
@@ -31,6 +32,8 @@ public class Objeto {
 	public boolean isMarkedForRemoval() {
 		return markedForRemoval;
 	}
+	
+	
 	
 	public void paint(Graphics2D g){
 		g.drawImage( spriteCache.getSprite(spriteNames[currentFrame]), x,y, stage );

@@ -3,6 +3,7 @@ package JuegoArkanoid;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.event.KeyAdapter;
@@ -16,19 +17,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
+
+
 
 
 public class Arkanoid extends Canvas implements Stage {
 	private BufferStrategy strategy;
 	private long usedTime;
-	
 	private SpriteCache spriteCache = new SpriteCache();
 	private SoundCache soundCache;
 	private List<Objeto> objetos = new ArrayList<Objeto>();
 	private Nave nave;
+	private Pelota pelota = new Pelota(this);
 	private List<Explosion> explosion = new ArrayList<Explosion>();
-
+	private int contadorFases = 0;
+	private static int contLadrillos = 0;
+	private Ladrillo ladrillo;
+	private int contadorVidas = 3;
+	//Singleton
+	private static Arkanoid instancia = null;
+	
+	/**
+	 * Getter Singleton
+	 * @return
+	 */
+	public static Arkanoid getInstancia () {
+		if (instancia == null) {
+			instancia = new Arkanoid();
+		}
+		return instancia;
+	}
+	
 	public Arkanoid() {
 		spriteCache = new SpriteCache();
 		soundCache = new SoundCache();
@@ -46,9 +68,16 @@ public class Arkanoid extends Canvas implements Stage {
 				System.exit(0);
 			}
 		});
+		
+		
+		ventana.setResizable(false);
+		createBufferStrategy(2);
+		strategy = getBufferStrategy();
+		requestFocus();
 		this.addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent e) {
 				nave.keyPressed(e);
+				pelota.keyPressed(e);
 			}
 			public void keyReleased(KeyEvent e) {
 				nave.keyReleased(e);
@@ -57,53 +86,159 @@ public class Arkanoid extends Canvas implements Stage {
 		this.addMouseMotionListener(new MouseAdapter() {
 			public void mouseMoved (MouseEvent e) {
 				nave.mouseMoved(e);
+				pelota.mouseMoved(e);
 			}
 		});
-		
-		ventana.setResizable(false);
-		createBufferStrategy(2);
-		strategy = getBufferStrategy();
-		requestFocus();
+		this.addMouseListener(new MouseAdapter() {
+			public void mouseClicked (MouseEvent e) {
+				pelota.mouseClicked(e);
+			}
+		});
+	}
+	
+	
+
+	/**
+	 * 
+	 */
+	public void fasePrueba() {
+		int fase[][] = new int[][] {
+				{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},		
+				{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+				{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+				{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+				{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+				{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+		};
+		for (int i = 0; i < fase.length; i++) {
+			   for (int j = 0; j < fase[i].length; j++) {
+				   if (fase[i][j] == 1) {
+					   ladrillo = new Ladrillo(this,i);
+					   ladrillo.setX(30 * j);
+					   ladrillo.setY(i * 20 + 30);
+					   objetos.add(ladrillo);
+					   setContLadrillos(getContLadrillos() + 1);
+				   }
+				   if (fase[i][j] == 2) {
+	 				   LadrilloPlateado lp = new LadrilloPlateado(this,i);
+					   lp.setX(30 * j);
+					   lp.setY(i * 20 + 30);
+					   objetos.add(lp);
+					   setContLadrillos(getContLadrillos() + 1);
+					   }
+				   if (fase[i][j] == 3) {
+	 				   LadrilloDorado ld = new LadrilloDorado(this,i);
+					   ld.setX(30 * j);
+					   ld.setY(i * 20 + 30);
+					   objetos.add(ld);
+					   setContLadrillos(getContLadrillos() + 1);
+					   }
+			   }
+			}
+		 }	
+	
+	/**
+	 * 
+	 */
+	public void fase01() {
+		int fase[][] = new int[][] {
+				{0,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,0},		
+				{0,0,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,0,0},
+				{0,0,0,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,0,0,0},
+				{0,0,0,0,1,1,1,1,1,1,0,0,1,1,1,1,1,0,0,0,0},
+				{0,0,0,0,0,1,1,1,1,1,0,0,1,1,1,1,0,0,0,0,0},
+				{0,0,0,0,0,0,1,1,1,1,0,0,1,1,1,0,0,0,0,0,0}
+		};
+		for (int i = 0; i < fase.length; i++) {
+			   for (int j = 0; j < fase[i].length; j++) {
+				   if (fase[i][j] == 1) {
+					   ladrillo = new Ladrillo(this,i);
+					   ladrillo.setX(30 * j);
+					   ladrillo.setY(i * 20 + 30);
+					   objetos.add(ladrillo);
+					   setContLadrillos(getContLadrillos() + 1);
+				   }
+				   if (fase[i][j] == 2) {
+	 				   LadrilloPlateado lp = new LadrilloPlateado(this,i);
+					   lp.setX(30 * j);
+					   lp.setY(i * 20 + 30);
+					   objetos.add(lp);
+					   setContLadrillos(getContLadrillos() + 1);
+					   }
+				   if (fase[i][j] == 3) {
+	 				   LadrilloDorado ld = new LadrilloDorado(this,i);
+					   ld.setX(30 * j);
+					   ld.setY(i * 20 + 30);
+					   objetos.add(ld);
+					   setContLadrillos(getContLadrillos() + 1);
+					   }
+			   }
+		   }
+		}
+	
+	
+	public void selectorFases (int num) {
+		if (num == 0) {
+			fase01();
+		}
+		if (num == 1) {
+			fase02();
+		}
+	}
+
+
+
+	/**
+	 * 
+	 */
+	
+	
+	public void fase02() {
+		int fase[][] = new int[][] {
+			{0,0,0,0,0,0,0,0,0,3,3,3,0,0,0,0,0,0,0,0,0},		
+			{0,0,0,0,0,0,0,0,3,2,1,2,3,0,0,0,0,0,0,0,0},
+			{0,0,0,0,0,0,0,3,2,1,1,1,2,3,0,0,0,0,0,0,0},
+			{0,0,0,0,0,0,3,2,1,1,1,1,1,2,3,0,0,0,0,0,0},
+			{0,0,0,0,0,3,2,1,1,1,1,1,1,1,2,3,0,0,0,0,0},
+			{0,0,0,0,3,2,1,1,1,1,1,1,1,1,1,2,3,0,0,0,0},
+		};
+		for (int i = 0; i < fase.length; i++) {
+			   for (int j = 0; j < fase[i].length; j++) {
+				   if (fase[i][j] == 1) {
+	 				   ladrillo = new Ladrillo(this,i);
+					   ladrillo.setX(30 * j);
+					   ladrillo.setY(i * 20 + 30);
+					   objetos.add(ladrillo);
+					   setContLadrillos(getContLadrillos() + 1);
+				   }
+				   if (fase[i][j] == 2) {
+	 				   LadrilloPlateado lp = new LadrilloPlateado(this,i);
+					   lp.setX(30 * j);
+					   lp.setY(i * 20 + 30);
+					   objetos.add(lp);
+					   setContLadrillos(getContLadrillos() + 1);
+					   }
+				   if (fase[i][j] == 3) {
+	 				   LadrilloDorado ld = new LadrilloDorado(this,i);
+					   ld.setX(30 * j);
+					   ld.setY(i * 20 + 30);
+					   objetos.add(ld);
+					   setContLadrillos(getContLadrillos() + 1);
+					   }
+			   }
+			}
 	}
 	
 	/**
 	 * 
 	 */
 	public void initWorld() {
-	  soundCache.playSound("Arkanoid-start-of-stage.wav");
-      Pelota p = new Pelota(this);
-      	p.setX(250);
-	    p.setVx(2);
-	    p.setY(300);
-	    p.setVy(2);
-	    objetos.add(p);
-	    
-	   for (int i = 0; i < 6; i++){
-		   for (int j = 0; j < 21; j++) {
-			   if (i == 0) {
-				   ladrilloDeColor("azul", i, j);
-			   }
-			   if (i == 1) {
-				   ladrilloDeColor("verde", i, j);
-			   }
-			   if (i == 2) {
-				   ladrilloDeColor("amarillo", i, j);
-			   }
-			   if (i == 3) {
-				   ladrilloDeColor("rojo", i, j);
-			   }
-			   if (i == 4) {
-				  ladrilloDeColor("rosa", i, j);
-			   }
-			   if (i == 5) {
-				  ladrilloDeColor("azulito", i, j);
-			   }
-		   }
-	   }
-	   
-	   	nave = new Nave(this);
-	    nave.setX(Stage.WIDTH/2);
-	    nave.setY(Stage.HEIGHT - 2*nave.getHeight() - 30);
+		soundCache.playSound("Arkanoid-start-of-stage.wav");
+	    objetos.add(pelota);
+	    selectorFases(contadorFases);
+	 	nave = new Nave(this);
+	    nave.setX(253);
+	    nave.setY(415);
 	    objetos.add(nave);
     }
 	
@@ -111,6 +246,12 @@ public class Arkanoid extends Canvas implements Stage {
 	 * 
 	 */
 	public void updateWorld() {
+		
+		if (pelota.getVx() == 0 && pelota.getVy() == 0) {
+			pelota.setX(nave.getX() + 26);
+			pelota.setY(nave.getY() - 15);
+		}
+		
 		for (int i = 0; i < objetos.size(); i++) {
 			Objeto p = (Objeto)objetos.get(i);
 			p.act();
@@ -143,6 +284,21 @@ public class Arkanoid extends Canvas implements Stage {
 			m.act();
 		}
 		nave.act();
+		if (pelota.markedForRemoval) {
+			pelota = new Pelota(this);
+			this.objetos.add(pelota);
+			contadorVidas--;
+		}
+		
+		if (contadorVidas == 0) {
+			this.objetos.clear();
+		}
+		
+		if (Ladrillo.numAzar == 8) {
+		//	VidaExtra vidaExtra = new VidaExtra(this);
+		//	objetos.add(vidaExtra);
+			}
+		
 	}
 	
 	/**
@@ -151,12 +307,7 @@ public class Arkanoid extends Canvas implements Stage {
 	 * @param i
 	 * @param j
 	 */
-	public void ladrilloDeColor (String color, int i, int j) {
-		Ladrillo l = new Ladrillo(this, color);
-		l.setX(30 * j);
-		l.setY(i * 20 + 30);
-		objetos.add(l);
-	}
+
 	
 	/**
 	 * 
@@ -171,18 +322,34 @@ public class Arkanoid extends Canvas implements Stage {
 				p.paint(g);
 			}		
 		}
+		if (contadorVidas == 3) {
+			g.setFont(new Font("Console", Font.BOLD, 18));
+			g.setColor(Color.red);
+			g.drawString("♥♥♥", 560, 430);
+			}
+		
+		if (contadorVidas == 2) {
+			g.setFont(new Font("Console", Font.BOLD, 18));
+			g.setColor(Color.red);
+			g.drawString("♥♥", 560, 430);
+			}
+		
+		if (contadorVidas == 1) {
+			g.setFont(new Font("Console", Font.BOLD, 18));
+			g.setColor(Color.red);
+			g.drawString("♥", 560, 430);
+			}
+		
+		if (contadorVidas == 0) {
+			g.drawImage(spriteCache.getSprite("game-over-games_3.png"), 0, 0, this);
+			objetos.clear();
+		}
 		
 		for (Explosion explosion : explosion) {
 			if (explosion.markedForRemoval == false) {
 				explosion.paint(g);
 			}
 		}
-		
-		g.setColor(Color.white);
-		if (usedTime > 0)
-		  g.drawString(String.valueOf(1000/usedTime)+" fps",0,Stage.HEIGHT-50);
-  	else
-	  	g.drawString("--- fps",0,Stage.HEIGHT-50);
 		strategy.show();
 	}
 	
@@ -208,7 +375,9 @@ public class Arkanoid extends Canvas implements Stage {
 		  	if (r1.intersects(r2)) {
 		  		a1.collision(a2);
 		  		a2.collision(a1);
-		  		//soundCache.playSound("Arkanoid-SFX-01.wav");
+		  		if (a1 == pelota && a2 == nave) {
+			  		soundCache.playSound("Arkanoid-SFX-04.wav");
+			  	}
 		  	}
 		  }
 		}
@@ -218,7 +387,7 @@ public class Arkanoid extends Canvas implements Stage {
 	 * 
 	 */
 	public void game() {
-		usedTime=1000;
+		usedTime = 1000;
 		initWorld();
 		while (isVisible()) {
 			long startTime = System.currentTimeMillis();
@@ -229,7 +398,24 @@ public class Arkanoid extends Canvas implements Stage {
 			try { 
 				 Thread.sleep(SPEED);
 			} catch (InterruptedException e) {}
+			if (contLadrillos <= 70) {
+				contadorFases++;
+				objetos.clear();
+				pelota = new Pelota(this);
+				initWorld();			
+				}
 		}
+	}
+	
+	
+	
+	
+	public static int getContLadrillos() {
+		return contLadrillos;
+	}
+
+	public static void setContLadrillos(int contLadrillos) {
+		Arkanoid.contLadrillos = contLadrillos;
 	}
 	
 	/**
@@ -237,7 +423,10 @@ public class Arkanoid extends Canvas implements Stage {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Arkanoid ark = new Arkanoid();
+ 		Arkanoid ark = new Arkanoid();
 		ark.game();
 	}
+
+
+	
 }
