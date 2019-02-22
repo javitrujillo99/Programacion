@@ -193,7 +193,18 @@ public class Pelota extends Objeto {
 		  }
 	  }
 	  
-	  protected void updateSpeed() {
+	  
+	  public float getPixelsXFrame() {
+		return pixelsXFrame;
+	}
+
+
+	public void setPixelsXFrame(float pixelsXFrame) {
+		this.pixelsXFrame = pixelsXFrame;
+	}
+
+
+	protected void updateSpeed() {
 		  	if (left) vx = -Nave.NAVE_SPEED;
 		  	if (right) vx = Nave.NAVE_SPEED;
 		  }

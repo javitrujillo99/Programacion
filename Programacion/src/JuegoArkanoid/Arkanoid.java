@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 
@@ -37,6 +36,9 @@ public class Arkanoid extends Canvas implements Stage {
 	private static int contLadrillos = 0;
 	private Ladrillo ladrillo;
 	private int contadorVidas = 3;
+	private VidaExtra vida;
+	private PildoraNave pildoraNave;
+	private PildoraVelocidad pildoraVelocidad;
 	//Singleton
 	private static Arkanoid instancia = null;
 	
@@ -257,13 +259,36 @@ public class Arkanoid extends Canvas implements Stage {
 			p.act();
 		}
 		int i = 0;
+		int numAzar = (int)Math.round(Math.random() * 12);
 		while (i < objetos.size()) {
 			Objeto m = (Objeto)objetos.get(i);
 			if (m.markedForRemoval) {
-				Explosion ex = new Explosion(this);
-				ex.setX(m.getX());
-				ex.setY(m.getY());
-				explosion.add(ex);
+				if (!(m instanceof VidaExtra) && !(m instanceof PildoraNave) && !(m instanceof PildoraVelocidad)) {
+					Explosion ex = new Explosion(this);
+					ex.setX(m.getX());
+					ex.setY(m.getY());
+					explosion.add(ex);
+				}
+				if (m instanceof Ladrillo) {
+					if (numAzar == 1) { 
+						vida = new VidaExtra(this);
+						vida.setX(pelota.getX());
+						vida.setY(pelota.getY());
+						objetos.add(vida);
+					}
+					if (numAzar == 2) {
+						pildoraNave = new PildoraNave(this);
+						pildoraNave.setX(pelota.getX());
+						pildoraNave.setY(pelota.getY());
+						objetos.add(pildoraNave);
+					}
+					if (numAzar == 3) {
+						pildoraVelocidad = new PildoraVelocidad(this);
+						pildoraVelocidad.setX(pelota.getX());
+						pildoraVelocidad.setY(pelota.getY());
+						objetos.add(pildoraVelocidad);
+					}
+				}
 				objetos.remove(i);
 				soundCache.playSound("Explosion.wav");
 			} else {
@@ -293,12 +318,6 @@ public class Arkanoid extends Canvas implements Stage {
 		if (contadorVidas == 0) {
 			this.objetos.clear();
 		}
-		
-		if (Ladrillo.numAzar == 8) {
-		//	VidaExtra vidaExtra = new VidaExtra(this);
-		//	objetos.add(vidaExtra);
-			}
-		
 	}
 	
 	/**
@@ -309,6 +328,30 @@ public class Arkanoid extends Canvas implements Stage {
 	 */
 
 	
+	public Nave getNave() {
+		return nave;
+	}
+
+	public void setNave(Nave nave) {
+		this.nave = nave;
+	}
+
+	public Pelota getPelota() {
+		return pelota;
+	}
+
+	public void setPelota(Pelota pelota) {
+		this.pelota = pelota;
+	}
+
+	public int getContadorVidas() {
+		return contadorVidas;
+	}
+
+	public void setContadorVidas(int contadorVidas) {
+		this.contadorVidas = contadorVidas;
+	}
+
 	/**
 	 * 
 	 */
@@ -322,22 +365,47 @@ public class Arkanoid extends Canvas implements Stage {
 				p.paint(g);
 			}		
 		}
+		
+		if (contadorVidas == 7) {
+			g.setFont(new Font("Console", Font.BOLD, 18));
+			g.setColor(Color.red);
+			g.drawString("7♥", 560, 430);
+			}
+		
+		if (contadorVidas == 6) {
+			g.setFont(new Font("Console", Font.BOLD, 18));
+			g.setColor(Color.red);
+			g.drawString("6♥", 560, 430);
+			}
+		
+		if (contadorVidas == 5) {
+			g.setFont(new Font("Console", Font.BOLD, 18));
+			g.setColor(Color.red);
+			g.drawString("5♥", 560, 430);
+			}
+		
+		if (contadorVidas == 4) {
+			g.setFont(new Font("Console", Font.BOLD, 18));
+			g.setColor(Color.red);
+			g.drawString("4♥", 560, 430);
+			}
+		
 		if (contadorVidas == 3) {
 			g.setFont(new Font("Console", Font.BOLD, 18));
 			g.setColor(Color.red);
-			g.drawString("♥♥♥", 560, 430);
+			g.drawString("3♥", 560, 430);
 			}
 		
 		if (contadorVidas == 2) {
 			g.setFont(new Font("Console", Font.BOLD, 18));
 			g.setColor(Color.red);
-			g.drawString("♥♥", 560, 430);
+			g.drawString("2♥", 560, 430);
 			}
 		
 		if (contadorVidas == 1) {
 			g.setFont(new Font("Console", Font.BOLD, 18));
 			g.setColor(Color.red);
-			g.drawString("♥", 560, 430);
+			g.drawString("1♥", 560, 430);
 			}
 		
 		if (contadorVidas == 0) {
@@ -398,7 +466,7 @@ public class Arkanoid extends Canvas implements Stage {
 			try { 
 				 Thread.sleep(SPEED);
 			} catch (InterruptedException e) {}
-			if (contLadrillos <= 70) {
+			if (contLadrillos == 0) {
 				contadorFases++;
 				objetos.clear();
 				pelota = new Pelota(this);
@@ -424,7 +492,7 @@ public class Arkanoid extends Canvas implements Stage {
 	 */
 	public static void main(String[] args) {
  		Arkanoid ark = new Arkanoid();
-		ark.game();
+		ark.getInstancia().game();
 	}
 
 
