@@ -61,6 +61,7 @@ public class Pelota extends Objeto {
 	public void collision(Objeto o) {
 		if (o instanceof Ladrillo) {
 			colisionConLadrillo((Ladrillo) o);
+			Arkanoid.getInstancia().setPuntuacion(Arkanoid.getInstancia().getPuntuacion() + 10);
 		}
 		
 		if (o instanceof Nave) {

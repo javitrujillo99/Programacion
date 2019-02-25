@@ -26,6 +26,7 @@ import javax.swing.JPanel;
 public class Arkanoid extends Canvas implements Stage {
 	private BufferStrategy strategy;
 	private long usedTime;
+	private int puntuacion;
 	private SpriteCache spriteCache = new SpriteCache();
 	private SoundCache soundCache;
 	private List<Objeto> objetos = new ArrayList<Objeto>();
@@ -351,6 +352,16 @@ public class Arkanoid extends Canvas implements Stage {
 	public void setContadorVidas(int contadorVidas) {
 		this.contadorVidas = contadorVidas;
 	}
+	
+	
+
+	public int getPuntuacion() {
+		return puntuacion;
+	}
+
+	public void setPuntuacion(int puntuacion) {
+		this.puntuacion = puntuacion;
+	}
 
 	/**
 	 * 
@@ -412,6 +423,8 @@ public class Arkanoid extends Canvas implements Stage {
 			g.drawImage(spriteCache.getSprite("game-over-games_3.png"), 0, 0, this);
 			objetos.clear();
 		}
+		
+		g.drawString("Puntuacion: " + puntuacion , 10, 430);
 		
 		for (Explosion explosion : explosion) {
 			if (explosion.markedForRemoval == false) {
