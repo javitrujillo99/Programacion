@@ -260,7 +260,7 @@ public class Arkanoid extends Canvas implements Stage {
 			p.act();
 		}
 		int i = 0;
-		int numAzar = (int)Math.round(Math.random() * 12);
+		int numAzar = (int)Math.round(Math.random() * 3);
 		while (i < objetos.size()) {
 			Objeto m = (Objeto)objetos.get(i);
 			if (m.markedForRemoval) {

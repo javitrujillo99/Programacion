@@ -1,19 +1,17 @@
-package ApuntesExamen;
+package Capitulo6.Bloque1.Ejercicio1Bloque1Cap6;
 
 import javax.swing.JOptionPane;
 
-public class MENUS {
+public class Ejercicio1Bloque1Cap6 {
 
 	public static void main(String[] args) {
-		// Declaración de todas la variables necesarias
-		String mensaje = null;		
+		String mensaje;		
 		int num1, num2, opcion;
 		String menu = "MENU\n"
-				+ "1.- \n"
-				+ "2.- \n"
-				+ "3.- \n"
-				+ "4.- \n"
-				+ "5.- \n"
+				+ "1.- Añadir artículo nuevo\n"
+				+ "2.- Borrar artículo\n"
+				+ "3.- Actualizar estante de un artículo\n"
+				+ "4.- Imprimir artículos\n"
 				+ "0.- Salir\n";
 		
 		opcion = Integer.parseInt(JOptionPane.showInputDialog(menu));
@@ -28,14 +26,9 @@ public class MENUS {
 			break;
 		case 4: 
 			break;
-		case 5: 
-			break;
 		case 0: // Salir
 			System.exit(0);
 		
-		// Saca la información al usuario
-		JOptionPane.showMessageDialog(null, mensaje);
-	
 		}
 	}
 }
