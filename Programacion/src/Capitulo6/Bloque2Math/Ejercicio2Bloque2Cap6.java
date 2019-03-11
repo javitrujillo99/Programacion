@@ -1,4 +1,4 @@
-package Capitulo6.Bloque2;
+package Capitulo6.Bloque2Math;
 
 public class Ejercicio2Bloque2Cap6 {
 

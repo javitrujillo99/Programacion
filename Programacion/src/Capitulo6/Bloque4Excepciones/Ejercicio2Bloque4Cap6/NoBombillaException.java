@@ -1,4 +1,4 @@
-package Capitulo6.Bloque4.Ejercicio2Bloque4Cap6;
+package Capitulo6.Bloque4Excepciones.Ejercicio2Bloque4Cap6;
 
 public class NoBombillaException extends Exception {
 

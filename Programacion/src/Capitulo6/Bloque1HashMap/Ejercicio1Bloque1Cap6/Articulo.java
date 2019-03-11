@@ -1,7 +1,7 @@
-package Capitulo6.Bloque1.Ejercicio1Bloque1Cap6;
+package Capitulo6.Bloque1HashMap.Ejercicio1Bloque1Cap6;
 
 public class Articulo {
-	private String codigoBarras;
+	private String codBarras;
 	private String estante;
 	private String descripcion;
 	/**
@@ -9,17 +9,17 @@ public class Articulo {
 	 * @param estante
 	 * @param descripcion
 	 */
-	public Articulo(String codigoBarras, String estante, String descripcion) {
+	public Articulo(String codBarras, String estante, String descripcion) {
 		super();
-		this.codigoBarras = codigoBarras;
+		this.codBarras = codBarras;
 		this.estante = estante;
 		this.descripcion = descripcion;
 	}
-	public String getCodigoBarras() {
-		return codigoBarras;
+	public String getCodBarras() {
+		return codBarras;
 	}
-	public void setCodigoBarras(String codigoBarras) {
-		this.codigoBarras = codigoBarras;
+	public void setCodBarras(String codBarras) {
+		this.codBarras = codBarras;
 	}
 	public String getEstante() {
 		return estante;
@@ -32,6 +32,10 @@ public class Articulo {
 	}
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+	@Override
+	public String toString() {
+		return "Articulo [codBarras=" + codBarras + ", estante=" + estante + ", descripcion=" + descripcion + "]";
 	}
 	
 	

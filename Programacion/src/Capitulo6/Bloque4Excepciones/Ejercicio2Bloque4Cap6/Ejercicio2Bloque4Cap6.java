@@ -1,17 +1,26 @@
-package Capitulo6.Bloque4.Ejercicio2Bloque4Cap6;
+package Capitulo6.Bloque4Excepciones.Ejercicio2Bloque4Cap6;
 
 import javax.swing.JOptionPane;
 
 public class Ejercicio2Bloque4Cap6 {
 	
-	public static String pedirFrase() throws NoBombillaException, PalabraOfensivaException {
+	public static String pedirFrase() throws NoBombillaException, PalabraOfensivaException, CaracterDistintoEspacioException, FraseInferiorTresPalabrasException {
 		String frase = JOptionPane.showInputDialog("Introduzca frase: ");
-		if (!frase.contains("bombilla")) {
-			throw new NoBombillaException();
-		}
+		
 		if (frase.contains("tonto") || frase.contains("tonta") || frase.contains("idiota")) {
 			throw new PalabraOfensivaException();
 		}
+		if (frase.trim().isEmpty()) {
+			throw new CaracterDistintoEspacioException();
+		}
+		String palabras[] = frase.split(" ");
+		if (palabras.length < 3) {
+			throw new FraseInferiorTresPalabrasException();
+		}
+		if (!frase.contains("bombilla")) {
+			throw new NoBombillaException();
+		}
+		return frase;
 		
 	}
 

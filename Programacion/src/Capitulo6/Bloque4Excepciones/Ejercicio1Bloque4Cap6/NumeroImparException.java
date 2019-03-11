@@ -1,4 +1,4 @@
-package Capitulo6.Bloque4.Ejercicio1Bloque4Cap6;
+package Capitulo6.Bloque4Excepciones.Ejercicio1Bloque4Cap6;
 
 public class NumeroImparException extends Exception {
 
