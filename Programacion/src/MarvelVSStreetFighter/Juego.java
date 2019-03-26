@@ -9,24 +9,25 @@ public class Juego {
 		ironMan = new IronMan(0001, "Iron Man", 100);
 		ryu = new Ryu(0002, "Ryu", 100);
 		System.out.println("Comienza el combate entre " + ironMan.getNombre() + " y " + getRyu().getNombre());
-		turnos(ironMan, getRyu());
+		turnos(ironMan, ryu);
 	}
 	
-	public static void turnos(IronMan ironMan, Ryu ryu) {
-		while (ironMan.getPuntosVida() >= 0 && ryu.getPuntosVida() >= 0) {
-			System.out.println("\nTurno de " + ironMan.getNombre());
-			ironMan.atacar();
+	public static void turnos(Personaje personaje1, Personaje personaje2) {
+		while (personaje1.getPuntosVida() >= 0 && personaje2.getPuntosVida() >= 0) {
+			System.out.println("\nTurno de " + personaje1.getNombre());
+			personaje1.atacar();
 			
 			//Condicion de escape para cuando los puntos de vida han bajado de 0 pero el bucle continua hasta que llega al final.
-			if (ryu.getPuntosVida() <= 0) {
-				System.out.println("\n\nEL GANADOR ES IRON MAN!!!");
+			if (personaje2.getPuntosVida() <= 0) {
+				System.out.println("\n\nEl ganador es " + personaje1.getNombre() +"!!!");
 				System.exit(0);
 			}
 			JOptionPane.showMessageDialog(null, "Pulsa Enter para continuar");
-			System.out.println("\nTurno de " + ryu.getNombre());
-			ryu.atacar();
-			if (ironMan.getPuntosVida() <= 0) {
-				System.out.println("\n\nEL GANADOR ES RYU!!!!!");
+			System.out.println("\nTurno de " + personaje2.getNombre());
+			personaje2.atacar();
+			if (personaje1.getPuntosVida() <= 0) {
+				System.out.println("\n\nEl ganador es " + personaje2
+						.getNombre() +"!!!");
 			}
 		} 
 	}

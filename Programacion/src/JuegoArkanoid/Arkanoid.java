@@ -505,6 +505,7 @@ public class Arkanoid extends Canvas implements Stage {
 	 */
 	public static void main(String[] args) {
  		Arkanoid ark = new Arkanoid();
+ 		Listener listener = new Listener();
 		ark.getInstancia().game();
 	}
 
