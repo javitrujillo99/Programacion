@@ -13,10 +13,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import Capitulo8.ejercicio03_GestionEntidadCoche.modelo.ConnectionManagerV2;
+import Capitulo8.ejercicio03_GestionEntidadCoche.modelo.ImposibleConectarException;
+
 import java.sql.PreparedStatement;
 
-import tutorialJava.capitulo7_Acceso_A_Datos.ConnectionManagerV2;
-import tutorialJava.capitulo7_Acceso_A_Datos.ImposibleConectarException;
+
 
 
 public class VentanaPrincipal extends JFrame{

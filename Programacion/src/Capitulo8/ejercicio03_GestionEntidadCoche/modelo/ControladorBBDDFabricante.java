@@ -1,4 +1,4 @@
-package Capitulo8.EjercicioGestionEntidadCoche.modelo;
+package Capitulo8.ejercicio03_GestionEntidadCoche.modelo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,11 +7,17 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import Capitulo8.EjercicioGestionEntidadCoche.modelo.entidades.Fabricante;
+import Capitulo8.ejercicio03_GestionEntidadCoche.modelo.entidades.Fabricante;
+
+
 
 public class ControladorBBDDFabricante {
+
 	
-	
+	/**
+	 * 
+	 * @return
+	 */
 	public static List<Fabricante> getTodosFabricantes () {
 		List<Fabricante> resultado = new ArrayList<Fabricante>();
 		try {
@@ -19,7 +25,7 @@ public class ControladorBBDDFabricante {
 			
 			PreparedStatement ps = conn.prepareStatement("SELECT * FROM tutorialjavacoches.fabricante order by nombre");
 			ResultSet rs = ps.executeQuery();
-			while (rs.next() ) {
+			while (rs.next()) {
 				resultado.add(getFabricanteFromResultSet(rs));
 			}
 			rs.close();
@@ -28,11 +34,20 @@ public class ControladorBBDDFabricante {
 		} catch (SQLException | ImposibleConectarException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-	
 		}
+		
 		return resultado;
 	}
 	
+	
+	
+	
+	
+	/**
+	 * 
+	 * @param rs
+	 * @return
+	 */
 	private static Fabricante getFabricanteFromResultSet (ResultSet rs) {
 		Fabricante fabricante = new Fabricante();
 		
@@ -40,11 +55,11 @@ public class ControladorBBDDFabricante {
 			fabricante.setId(rs.getInt("id"));
 			fabricante.setCif(rs.getString("cif"));
 			fabricante.setNombre(rs.getString("nombre"));
-		} catch(SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		return fabricante;
 	}
-	
 }

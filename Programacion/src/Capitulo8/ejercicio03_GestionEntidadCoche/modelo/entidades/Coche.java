@@ -1,6 +1,4 @@
-package Capitulo8.EjercicioGestionEntidadCoche.modelo.entidades;
-
-import java.sql.ResultSet;
+package Capitulo8.ejercicio03_GestionEntidadCoche.modelo.entidades;
 
 public class Coche {
 	private int id;
@@ -9,11 +7,20 @@ public class Coche {
 	private String modelo;
 	private String color;
 	
+	
+	/**
+	 * 
+	 */
+	public Coche() {
+		super();
+	}
+
+
 	/**
 	 * @param id
 	 * @param idFabricante
 	 * @param bastidor
-	 * @param modelo
+	 * @param nombre
 	 * @param color
 	 */
 	public Coche(int id, int idFabricante, String bastidor, String modelo, String color) {
@@ -25,53 +32,38 @@ public class Coche {
 		this.color = color;
 	}
 	
-
-	/**
-	 * 
-	 */
-	public Coche() {
-		super();
-	}
-
-
+		
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
 	public int getIdFabricante() {
 		return idFabricante;
 	}
-
 	public void setIdFabricante(int idFabricante) {
 		this.idFabricante = idFabricante;
 	}
-
 	public String getBastidor() {
 		return bastidor;
 	}
-
 	public void setBastidor(String bastidor) {
 		this.bastidor = bastidor;
 	}
-
 	public String getModelo() {
 		return modelo;
 	}
-
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
+	public void setModelo(String nombre) {
+		this.modelo = nombre;
 	}
-
 	public String getColor() {
 		return color;
 	}
-
 	public void setColor(String color) {
 		this.color = color;
 	}
+	
+	
 	
 }

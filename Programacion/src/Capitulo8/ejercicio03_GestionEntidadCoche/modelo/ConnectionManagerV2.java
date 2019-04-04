@@ -1,4 +1,4 @@
-package Capitulo8.EjercicioGestionEntidadCoche.modelo;
+package Capitulo8.ejercicio03_GestionEntidadCoche.modelo;
 
 import java.sql.SQLException;
 

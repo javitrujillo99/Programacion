@@ -1,4 +1,4 @@
-package Capitulo8.EjercicioGestionEntidadCoche.modelo;
+package Capitulo8.ejercicio03_GestionEntidadCoche.modelo;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -24,7 +24,7 @@ public class JDBCPropiedades {
 			propiedades = new Properties();
 		    
 			try {
-				File file = new File("./src/Capitulo8/EjercicioGestionEntidadCoche/modelo/jdbc.properties");
+				File file = new File("./src/Capitulo8/ejercicio03_GestionEntidadCoche/modelo/jdbc.properties");
 				propiedades.load(new FileReader(file));
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();

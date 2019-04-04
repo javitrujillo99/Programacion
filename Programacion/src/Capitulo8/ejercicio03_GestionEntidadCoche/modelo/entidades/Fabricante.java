@@ -1,7 +1,7 @@
-package Capitulo8.EjercicioGestionEntidadCoche.modelo.entidades;
+package Capitulo8.ejercicio03_GestionEntidadCoche.modelo.entidades;
 
 public class Fabricante {
-	
+
 	private int id;
 	private String cif;
 	private String nombre;
@@ -53,5 +53,7 @@ public class Fabricante {
 	public String toString() {
 		return cif + " - " + nombre;
 	}
+	
+	
 	
 }
