@@ -1,5 +1,4 @@
 function comprobar(cadena) {
-    var resultado = "La cadena \""+cadena+"\" ";
     if (cadena == cadena.toUpperCase()) {
         resultado += " está formada sólo por mayúsculas";
     }
