@@ -1,4 +1,6 @@
-function comprobar(cadena) {
+function comprobar() {
+    var cadena = prompt("Escribe una palabra");
+    var resultado = "La cadena \""+cadena+"\" ";
     if (cadena == cadena.toUpperCase()) {
         resultado += " está formada sólo por mayúsculas";
     }
@@ -8,5 +10,6 @@ function comprobar(cadena) {
     else {
         resultado += " está formada por mayúsculas y minúsculas";
     }
-    return resultado;
+    return alert(resultado);
 }
+comprobar();

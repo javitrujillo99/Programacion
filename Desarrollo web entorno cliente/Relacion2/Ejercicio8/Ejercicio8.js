@@ -1,11 +1,16 @@
-function comprobar(cadena) {
-    if (cadena.upperLower) {
-        alert('Está escrito con minúsculas');
-    }
-    else if (regxs.upper.test(cadena)) {
-        alert('Está escrito con mayúsculas');
-    }
-    else if(regxs.upperLower.test(cadena)) {
-        alert('Está escrito con mayúsculas y minúsculas');
-    }
-}
+function texto() {
+            var palabra=prompt("Escribe una palabra");         
+            for (i = 0 ; i < palabra.length; i++) {
+                if (palabra[i] != palabra[palabra.length-i-1]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+         
+        if (texto()) {
+            alert("Esto es palíndromo");
+        }
+        else {
+            alert("Esto no es palíndromo")
+        }
