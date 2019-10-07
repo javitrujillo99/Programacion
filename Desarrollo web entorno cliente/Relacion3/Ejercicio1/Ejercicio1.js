@@ -12,5 +12,5 @@ else {
         cuatrimestre = 3;
     }
 }
-document.write('Fecha actual:<br>' + (fecha.getDay() - 1) + ' - ' +  
+document.write('Fecha actual:<br>' + (fecha.getDay()) + ' - ' +  
 (fecha.getMonth() + 1) + ' - ' + 'Cuatrimestre numero ' + cuatrimestre);
