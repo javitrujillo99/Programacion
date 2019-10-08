@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src = 'Ejercicio2.js'>
+    <title>Ejercicio 2</title>
+    <script src='Ejercicio2.js'></script>
+    <script>
+        empresa = new Empresa('33344455E', 'Company SL', 'Calle Lucena 8', 555666777);
+        cliente = new Cliente('44455566R', 444555666, 'Valentino', 'Calle Almería 9',
+            13459, 'Lucena', 'Cordoba');
+        var arrayProductos = [new Producto('Armario', 50, 2), new Producto('Lampara', 10, 3)];
+        document.write("<h1>FACTURA</h1><h2>Productos</h2>");
+        factura = new Factura(empresa, cliente, importe, 'PayPal');
+        arrayProductos.forEach(element => {
+            document.write("Descripcion: " + element.descripcion + "<br>Precio:" +
+                element.precio + "<br>Cantidad: " + element.cantidad + "<br>Importe total: " +
+                element.precioFinal() + "<br>");
+        });
+        document.write("PRECIO TOTAL DE LA FACTURA: ");
+        var importe = totalFactura(arrayProductos);
+        imprimir();
+
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>

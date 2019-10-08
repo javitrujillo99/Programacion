@@ -14,6 +14,7 @@ class Circunferencia {
         + this.radio +" es " + 2 * Math.PI * this.radio);
     }
 }
-circunferencia = new Circunferencia(5);
+radio = parseInt(prompt("Introduzca radio de la circunferencia"));
+circunferencia = new Circunferencia(radio);
 circunferencia.calculoArea();
 circunferencia.calculoLongitud();
