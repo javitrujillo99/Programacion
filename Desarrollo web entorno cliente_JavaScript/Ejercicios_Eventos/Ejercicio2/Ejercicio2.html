@@ -1,0 +1,62 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1 - EventosL</title>
+
+<script type="text/javascript" src="Ejercicio2.js">
+
+</script>
+</head>
+
+<body>
+<h1>
+    <center>Ejercicio 1 - Eventos </center>
+</h1>
+<p id="parrafo1" style = "font-size:16">Joaquín Sánchez pasó por los micrófonos del Transistor de Onda Cero. 
+El capitán del Betis contó las razones por las que se frustó su fichaje por el Real Madrid.
+"Estuve a nada de firmar el contrato con el Real Madrid y pasar la revisión médica. 
+Fue un poco extraño. En aquella época Lopera sabía cuáles eran mis intenciones desde el primer día. 
+Poder jugar en un equipo como el Real Madrid. Siempre se lo transmití porque era una oportunidad muy 
+bonita. Pero exigía una cantidad de dinero muy importante y aparte algo más que ya se me escapaba de 
+las manos. Cada vez que hablábamos con Florentino decía que Don Manuel no se estaba postulando bien 
+a la hora de traspasarme y que exigía muchas cosas que sinceramente se me escapaban".</p>
+<a id="enlace1" href="#" onclick="ocultar('parrafo1', 'enlace1', 'enlace2')">Ocultar contenidos párrafo 1</a>
+<br>
+<a id="enlace2" href="#" style="visibility: hidden;" onclick="mostrar('parrafo1', 'enlace1', 'enlace2')" >Mostrar contenidos párrafo 1</a>
+<form>
+<input type="button" value="Aumentar" onclick="aumentar('parrafo1')">
+<input type="button" value="Disminuir" onclick="disminuir('parrafo1')" >
+<input type="button" value="Defecto" onclick="defecto('parrafo1')" >
+</form>
+<br/>
+
+<p id="parrafo2" style = "font-size:16"> Eden Hazard está volviendo a sonar para el Real Madrid. Ahora que el equipo blanco
+atraviesa una mala racha, una gran parte de la afición ve necesario un revulsivo para reconducir la 
+situación y echando un vistazo al mercado de fichajes, el belga es el jugador más talentoso de los que 
+podrían abandonar su equipo sin reparos. </p>
+<a id="enlace3" href="#" onclick="ocultar('parrafo2', 'enlace3', 'enlace4')">Ocultar contenidos párrafo 1</a>
+<br>
+<a id="enlace4" href="#" style="visibility: hidden;" onclick="mostrar('parrafo2', 'enlace3', 'enlace4')" >Mostrar contenidos párrafo 1</a><br>
+<form>
+<input type="button" value="Aumentar" onclick="aumentar('parrafo2')">
+<input type="button" value="Disminuir" onclick="disminuir('parrafo2')" >
+<input type="button" value="Defecto" onclick="defecto('parrafo2')" >
+</form>
+<br/>
+
+<p id="parrafo3" style = "font-size:16">Florentino cenó con Julen Lopetegui tras la derrota del miércoles en el Luzhniki 
+de Moscú. El jefe llamó a capítulo al empleado tras los últimos acontecimientos deportivos. Más allá 
+de los resultados, al presidente del Real Madrid le preocupaba el rumbo que está cogiendo el vestuario 
+del equipo blanco. “No se puede tapar el sol con un dedo”, decía Keylor Navas cuando era preguntado 
+por Cristiano Ronaldo en Moscú y la falta de gol del equipo. No le agrada al presidente escuchar el 
+nombre de Cristiano Ronaldo cada vez que pierde este Madrid.</p>
+<a id="enlace5" href="#" onclick="ocultar('parrafo3', 'enlace5', 'enlace6')">Ocultar contenidos párrafo 1</a>
+<br>
+<a id="enlace6" href="#" style="visibility: hidden;" onclick="mostrar('parrafo3', 'enlace5', 'enlace6')" >Mostrar contenidos párrafo 1</a><br>
+<form>
+<input type="button" value="Aumentar" onclick="aumentar('parrafo3')">
+<input type="button" value="Disminuir" onclick="disminuir('parrafo3')" >
+<input type="button" value="Defecto" onclick="defecto('parrafo3')" >
+</form>
+</body>
+</html>
