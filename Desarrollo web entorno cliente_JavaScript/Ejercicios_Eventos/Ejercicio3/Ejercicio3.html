@@ -5,8 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .cuadrado {
+            width:300px;
+            height:300px;
+            background-color: #ffff00;
+            border-color:yellow;
+            border: 1px solid;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script src="Ejercicio3.js">
+    </script>
 </head>
-<body>
-    
+<body onmousemove="propiedades(event)" onkeydown="tecla(event)">
+    <div id="div" class="cuadrado">
+       X: <input type="text" id="x"></input><br>
+       Y: <input type="text" id="y"></input><br>
+       Tecla pulsada: <input type="text" id="tecla"></input><br>
+       Ascii de la letra: <input type="text" id="ascii"></input>
+    </div>
 </body>
 </html>

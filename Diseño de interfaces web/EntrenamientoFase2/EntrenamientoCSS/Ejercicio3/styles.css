@@ -1,6 +1,6 @@
 .curriculum {
     font-family: Cambria;
-    border: 1px solid;
+    float: inline-end;
 }
 .curriculum h3 {
     font-family: Arial;
@@ -13,26 +13,23 @@
     float: left;
     padding-right: 10px;
     padding-bottom: 5px;
-    padding-top: 20px;
 }
 .menu {
     float: left;
-    height: 600px;
+    display:flex;
+    height: 500px;
+    flex-direction: column;
+    margin-bottom:10px;
 }
-  
 .menu a {
-    background-color: #eee;
+    background-color: aqua;
     color: black;
     padding: 15px;
     display: block;
     text-decoration: none;
+    font-size: 25px;
 }
   
 .menu a:hover {
-    background-color: #ccc;
-}
-  
-.menu a.active {
     background-color: #4CAF50;
-    color: white;
 }
