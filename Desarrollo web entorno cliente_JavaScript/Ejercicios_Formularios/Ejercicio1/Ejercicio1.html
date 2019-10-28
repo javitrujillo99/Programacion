@@ -9,6 +9,13 @@
     </script>
 </head>
 <body>
-    
+    <form onsubmit="puedeEnviar()">
+        Nombre: <input type="text" id="name" name="nombre" placeholder="Introduzca nombre"/><br>
+        Sexo: <select id="sexo">
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+        </select><br>
+        <input type="submit" name="enviar" value="Enviar">
+    </form>
 </body>
 </html>

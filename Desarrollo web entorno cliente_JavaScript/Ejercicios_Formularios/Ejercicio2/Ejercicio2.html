@@ -9,6 +9,11 @@
     </script>
 </head>
 <body>
-    
+    <form onsubmit="enviar()">
+        <textarea id="area" placeholder="Escriba texto" maxlength="50" cols="50" rows="10"></textarea>
+        <br>
+        <input type="submit" value="Enviar" name="enviar">
+        <input type="hidden" value="contarCaracteres()" id="contador">
+    </form>
 </body>
 </html>
