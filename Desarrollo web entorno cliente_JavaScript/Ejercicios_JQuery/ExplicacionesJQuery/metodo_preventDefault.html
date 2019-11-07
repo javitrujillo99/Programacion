@@ -1,0 +1,18 @@
+<!doctype html>
+<head>
+<meta charset="UTF-8">
+<title>Burbujeo de eventos</title>
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(evento) {
+ 	$("a").click(function(evento) {
+		alert("has pulsado el boton");
+ 		//evento.preventDefault();
+		});
+	});
+</script>
+</head>
+<body>
+<a href="http://www.marca.es">ir a marca</a>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ejercicio 9</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <br />
+        <div class="row" id="panelPrecios">
+            <div class="items">
+                <ul>
+                    <li>
+                        <a data-toggle="tooltip" title="<img src='images.jpg'/>26/09/2001">
+                            Juan Alberto Circonio
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="tooltip" title="<img src='descarga.jpg'/>10/01/1999">
+                            Rafael Lopez
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="tooltip" title="<img src='domingo_bermejo.jpeg'/>17/07/2006">
+                            Domingo Bermejo
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('#panelPrecios [data-toggle="tooltip"]').tooltip({
+            animated: 'fade',
+            placement: 'bottom',
+            html: true
+        });
+    </script>
+
+</body>
+
+</html>
