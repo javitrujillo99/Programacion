@@ -15,18 +15,18 @@ ul li a{
 }
 
 
-#content{
+.content{
   margin: auto;
 }
 
-#izquierda{
+.izquierda{
   float: left;
   margin-left: 150px;
   width: 800px;
   margin-top: 50px;
 }
 
-#derecha{
+.derecha{
   float: left;
   width: 20%;
   background-color: gainsboro;
@@ -39,19 +39,20 @@ hr.linea{
   color: red !important;
   size: 10px;
 }
-#linea{
+
+.linea{
   color: red;
 }
 
-#derecha img{
+.derecha img{
   margin-left: 22px;
 }
 
-#derecha h3{
+.derecha h3{
   font-family: "Gochi Hand";
 }
 
-#derecha p{
+.derecha p{
   margin-top: 15px;
 }
 

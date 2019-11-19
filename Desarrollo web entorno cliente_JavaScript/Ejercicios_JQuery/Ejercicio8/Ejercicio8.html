@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 8</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="Ejercicio8.js"></script>
+</head>
+
+<body>
+    <h1>Conversor de distancia y peso</h1>
+    <form id="formulario1">
+        Kilómetros: <input type="text" name="kilometros" id="km" onclick="borrarMetros()">
+        <input type="button" name="convertirDistancia" value="Convertir distancia" onclick="convertirDis()">
+        Metros: <input type="text" name="metros" id="m" onclick="borrarKilometros()">
+    <form id="formulario2">
+        <br><br>
+        Kilogramos: <input type="text" name="kilogramos" id="kg" onclick="borrarGramos()">
+        <input type="button" name="convertirPeso" value="Convertir peso" onclick="convertirPes()">
+        Gramos: <input type="text" name="gramos" id="g" onclick="borrarKilogramos()">
+    </form>
+
+</body>
+
+</html>

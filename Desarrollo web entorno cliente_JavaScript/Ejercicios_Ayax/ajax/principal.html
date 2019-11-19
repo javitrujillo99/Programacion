@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Noticias deportivas</title>
+<link href="hojaestilosexterna.css" rel="stylesheet">
+<style>
+#noticias li {
+	display: inline-block;
+	margin-right: 30px;
+}
+#noticias li a {
+	padding: 5px 10px; 
+	background-color: white;
+	color: black;
+	text-decoration: none;	
+}
+#noticias li a:hover {
+	background-color: rgb(255,153,0);
+	color: white;
+}
+#contenedor{
+	background-color: rgb(38, 0, 255);
+	margin-top: 10px;
+	padding: 20px;
+	border: 2px solid white;
+	color:white;	
+}
+</style>
+<script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+
+<script>
+$(function() {
+	$("#noticias a").click(function(e){
+	var direccionweb=$(this).attr("href"); //$(this) es el selector para referirnos al elemento actual.
+	$("#contenedor").load(direccionweb);
+	e.preventDefault(); 
+	});
+s}); 
+</script>
+</head>
+<body>
+
+	<div class="cabecera">
+		<p class="logo">Ejemplo AJAX con función load() de jQuery</p>
+	</div>
+	<div class="contenido">
+		<div class="principal">
+			<h1>Noticias deportivas</h1>
+			<ul id="noticias">
+				<li><a href="futbol.html">Fútbol</a></li>
+				<li><a href="baloncesto.html">Baloncesto</a></li>
+				<li><a href="tenis.html">Tenis</a></li>
+			</ul>
+			<div id="contenedor"></div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Control de acceso</title>
+<link href="hojaestilosexterna.css" rel="stylesheet">
+<style>
+#contenedor {
+	margin-top: 10px;
+	padding: 20px;
+	border: 1px solid white;
+	color:white;	
+	}
+</style>
+<script src="../video3/jquery/jquery-3.3.1.min.js"></script>
+<script>
+
+$(document).ready(function() {
+	$("#controlacceso").submit(function(evento){
+	//creamos un paquete de información con todos los datos del formulario que se van a enviar
+	
+	//se puede hacer de dos formas, una la comentada y la otra la sin comentar
+	//var datos={usuario:$("#usuario".val()),password:$("#password".val())}
+	var datos=$(this).serialize();
+	// en caso de que ocurra un error procesará los datos no con la función procesar sino con procesarError
+	// va a ocurrir que no se encuentra el archivo controlacceso2.php porque no existe
+	$.get("http://localhost/ajaxgetpost/controlacceso2.php",datos,procesar).fail(procesarError);
+	return false;
+	})
+	
+function procesar(datosdevueltos){
+if (datosdevueltos=="correcto")
+	{
+	$("#contenedor").html("<p>Bienvenido al sistema</p>");
+	}
+else
+	{
+	$("#contenedor").html("<p>Error de acceso</p>");
+	}
+}
+function procesarError(datosdevueltos){
+	var mensajeError="Error en el procesamiento";
+	$("#contenedor").html("<p>"+mensajeError+"</p>");
+	}		
+})
+</script>
+</head>
+<body>
+
+	<div class="cabecera">
+		<p class="logo">Procesando respuesta del servidor</p>
+	</div>
+	<div class="contenido">
+		<div class="principal">
+			<form method="get" action="controlacceso.php" id="controlacceso">
+            <table>
+            	<tr>
+                	<td><label for="usuario">Usuario:</label></td>
+                    <td><input type="text" name="usuario" id="usuario"></td>
+                </tr>
+                <tr>
+                    <td><label for="contra">Password:</label></td>
+                    <td><input type="text" name="password" id="password"></td>
+                </tr>
+				<tr>
+                    <td colspan="2"><p></td>
+                </tr>
+				<tr>
+                    <td colspan="2" align="center"><input type="submit" name="acceder" id="acceder" value="Acceder"></td>
+                </tr>
+            </table>
+			</form>
+		<div id="contenedor"></div>
+		</div>
+	</div>
+</body>
+</html>

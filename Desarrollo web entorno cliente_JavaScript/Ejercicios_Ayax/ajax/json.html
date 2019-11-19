@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Objetos JSON</title>
+<link href="hojaestilosexterna.css" rel="stylesheet">
+<style>
+#contenedor {
+	margin-top: 10px;
+	padding: 20px;
+	border: 1px solid white;
+	color:white;	
+	}
+</style>
+<script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+$(document).ready(function() {
+	$("#formularioJson").submit(function(){
+		// lo voy a hacer sin el método serialize() ya que solo vamos a enviar el dni	
+		var datosFormulario={dni : $("#dni").val(),nombre : $("#nombre").val(),email : $("email").val()};	
+		$.getJSON('http://localhost/json/json.php',datosFormulario,procesarDatos);
+		return false;
+			})
+		
+	function procesarDatos(datosJson){		
+		$("#nombre").val(datosJson.nombre);
+		$("#email").val(datosJson.email);
+		$("#contenedor").html(datosJson.dni+" "+datosJson.nombre+" "+datosJson.email);
+		}
+	
+}); 
+</script>
+</head>
+<body>
+
+	<div class="cabecera">
+		<p class="logo">Respuesta del servidor</p>
+	</div>
+	<div class="contenido">
+		<div class="principal">
+			<form method="get" action="" id="formularioJson">
+            <table>
+            	<tr>
+                	<td>					
+						<label for="dni">Dni:</label>
+                    </td>
+                    <td>
+						<input type="text" name="dni" id="dni">
+					</td>
+                </tr>
+				<tr>
+                	<td>					
+						<label for="nombre">Nombre:</label>
+                    </td>
+                    <td>
+						<input type="text" name="nombre" id="nombre">
+					</td>
+                </tr>
+                <tr>
+                	<td>					
+						<label for="email">email:</label>
+                    </td>
+                    <td>
+						<input type="text" name="email" id="email">
+					</td>
+                </tr>   
+                    <tr>
+                    <td colspan="2" >
+						<input type="submit" name="Buscar" id="buscar" value="Consultar" >
+					</td>
+                    </tr>
+                    </table>
+				</form>
+			<div id="contenedor"></div>
+		</div>
+	</div>
+
+</body>
+</html>

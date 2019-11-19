@@ -1,0 +1,22 @@
+{"contactos":
+    [
+    {
+    "nombre":"miguel",
+    "apellido":"león",
+    "edad":"15",
+    "telefono":"666111111"
+    },
+    {
+    "nombre":"pepe",
+    "apellido":"martín",
+    "edad":"8",
+    "telefono":"666222222"
+    },
+    {
+    "nombre":"luisa",
+    "apellido":"pérez",
+    "edad":"21",
+    "telefono":"666333333"
+    }
+    ]
+}
