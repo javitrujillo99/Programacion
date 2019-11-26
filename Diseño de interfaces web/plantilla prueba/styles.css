@@ -54,4 +54,7 @@ body {
     .enlace {
         display: block;
     }
+    #derecha {
+        float: none;
+    }
 }

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="Ejercicio12.js"></script>
+</head>
+
+<body>
+    <h1>Centro Educativo I.E.S. Marqués de Comares</h1>
+    <div style="float:left">
+        <form>
+            <h2>Matriculación en el ciclo de grado superior DAW</h1>
+            Apellidos: <input type="text" name="apellidos" id="apellidos1" style="width: 200px">
+            Nombre: <input type="text" id="nombre1" name="nombre"><br><br>
+            Domicilio: <input type="text" id="domicilio1" name="domicilio" style="width: 200px"><br><br>
+            Sexo: <input type="radio" id="hombre1" name="hombre">Hombre
+            <input type="radio" id="mujer1" name="mujer">Mujer<br><br>
+            Edad: <input type="number" id="edad1" name="edad" style="width: 30px;"><br><br>
+            Curso: <select id="curso1" name="curso">
+                <option>1º</option>
+                <option>2º</option>
+            </select><br><br>
+            Módulos en que se matricula:<br>
+            <input type="checkbox" id="ed"name="entornos">Entornos de Desarrollo<br>
+            <input type="checkbox" id="bd" name="bbdd">Bases de Datos<br>
+            <input type="checkbox" id="pro" name="programacion">Programación<br>
+            <input type="checkbox" id="imp" name="implantacion">Implantación de sistemas operativos<br>
+            <input type="checkbox" id="fol1" name="fol">Formación y orientación laboral<br>
+            <input type="checkbox" id="cli" name="cliente">Desarrollo Web en Entorno Cliente<br>
+            <input type="checkbox" id="ser" name="servidor">Desarrollo Web en Entorno Servidor<br>
+            <input type="checkbox" id="des" name="despliegue">Despliegue de aplicaciones Web<br>
+            <input type="checkbox" id="diw" name="interfaces">Desarrollo de interfaces Web<br>
+            <input type="checkbox" id="emp1" name="empresa">Empresa e iniciativa emprendedora<br>
+            <br>
+            Observaciones:<br>
+            <textarea name="observaciones" id="observaciones1" placeholder="Indique si tiene alguna observación..." rows="10"
+                cols="60"></textarea><br><br>
+            <input type="button" id="enviar1" name="enviar" value="Enviar">
+            <input type="button" id="restablecer1" name="restablecer" value="Restablecer">
+        </form>
+    </div>
+    <div style="float: right;">
+        <form>
+            <h2>Matriculación en el ciclo de grado medio SMR</h1>
+            Apellidos: <input type="text" id="apellidos2" name="apellidos" style="width: 200px">
+            Nombre: <input type="text" id="nombre2" name="nombre"><br><br>
+            Domicilio: <input type="text" id="domicilio2" name="domicilio" style="width: 200px"><br><br>
+            Sexo: <input type="radio" id="hombre2" name="hombre">Hombre
+            <input type="radio" id="mujer2" name="mujer">Mujer<br><br>
+            Edad: <input type="number" id="edad2" name="edad" style="width: 30px;"><br><br>
+            Curso: <select name="curso" id="curso2">
+                <option>1º</option>
+                <option>2º</option>
+            </select><br><br>
+            Módulos en que se matricula:<br>
+            <input type="checkbox" id="ofi" name="ofimatica">Aplicaciones Ofimáticas<br>
+            <input type="checkbox" id="red" name="redes">Redes Locales<br>
+            <input type="checkbox" id="som" name="monopuestos">Sistemas Operativos Monopuestos<br>
+            <input type="checkbox" id="mon" name="montaje">Montaje y Mantenimiento de Equipos<br>
+            <input type="checkbox" id="fol2" name="fol">Formación y orientación laboral<br>
+            <input type="checkbox" id="apl" name="aplicaciones">Aplicaciones Web<br>
+            <input type="checkbox" id="seg" name="seguridad">Seguridad Informática<br>
+            <input type="checkbox" id="red" name="servicios">Servicios en Red<br>
+            <input type="checkbox" id="sor" name="redes">Sistemas Operativos en Red<br>
+            <input type="checkbox" id="emp2" name="empresa">Empresa e iniciativa emprendedora<br>
+            <br>
+            Observaciones:<br>
+            <textarea name="observaciones" id="observaciones2" placeholder="Indique si tiene alguna observación..." rows="10"
+                cols="60"></textarea><br><br>
+            <input type="button" id="enviar2" name="enviar" value="Enviar">
+            <input type="button" id="restablecer2" name="restablecer" value="Restablecer">
+        </form>
+    </div>
+</body>
+
+</html>
