@@ -1,0 +1,1 @@
+momazos.duckdns.org
