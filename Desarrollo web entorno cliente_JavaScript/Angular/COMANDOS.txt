@@ -1,0 +1,1 @@
+PARA CREAR UN PROYECTO NUEVO: dentro de la carpeta que queramos (Angular en mi caso): ng new 'nombredelproyecto'

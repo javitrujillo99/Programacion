@@ -1,0 +1,19 @@
+<div class="padre">
+  <table border="1">
+    <th coslpan="2" style="text-align: center;">Padre</th>
+    <tr>
+      <td>Número 1:</td>
+      <td><input class="form-control" [(ngmodel)]="valor1"></td>
+    </tr>
+    <tr>
+      <td>{{valor2}}</td>
+      <td><input class="form-control" [(ngmodel)]="valor2"</td>
+    </tr>
+    <tr>
+      <td>Resultado</td>
+      <td><b>{{resultadoP}}</b></td>
+    </tr>
+  </table>
+</div>
+<app-hijo [valor1]="valor1" [valor2]="valor2" (envRes)="captaResultado($event)"></app-hijo>
+<router-outlet></router-outlet>

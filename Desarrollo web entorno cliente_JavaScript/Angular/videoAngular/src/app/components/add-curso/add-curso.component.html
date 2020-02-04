@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">Nuevo curso</span>
+        <form (ngSubmit)="onGuardarCurso(formNew)" #formNew="ngForm" class="col-s6">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input [(ngModel)]="curso.nombre" #nombre="ngModel" type="text" name="nombre" id="nombre" placeholder="Nombre curso">
+                    <label>Nombre</label>
+                </div>
+                <div class="input-field col s6">
+                    <input [(ngModel)]="curso.descripcion" #descripion="ngModel" type="text" name="descripcion" id="descripcion" placeholder="Descripción curso">
+                    <label>Descripción</label>
+                </div>
+                <div class="input-field col s6">
+                    <input [(ngModel)]="formador.nombre" #formador="ngModel" type="text" name="formador" id="formador" placeholder="Formador curso">
+                    <label>Formador</label>
+                </div>
+                <div class="input-field col s6">
+                    <input [(ngModel)]="precio.nombre" #precio="ngModel" type="text" name="precio" id="precio" placeholder="Precio curso">
+                    <label>Precio</label>
+                </div>
+                <div class="input-field col s6">
+                    <input [(ngModel)]="idioma.nombre" #idioma="ngModel" type="text" name="idioma" id="idioma" placeholder="Idioma curso">
+                    <label>Idioma</label>
+                </div>
+                <div class="input-field col s6">
+                    <input [(ngModel)]="tecnologia.nombre" #tecnologia="ngModel" type="text" name="tecnologia" id="tecnologia" placeholder="Tecnología curso">
+                    <label>Tecnología</label>
+                </div>
+                <button type="submit" class="btn waves-effect waves-light orange right">Guardar
+                    <i class="material-icons">add_circle</i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
