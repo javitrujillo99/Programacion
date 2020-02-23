@@ -4,27 +4,43 @@
         <form (ngSubmit)="onGuardarCurso(formNew)" #formNew="ngForm" class="col-s6">
             <div class="row">
                 <div class="input-field col s6">
-                    <input [(ngModel)]="curso.nombre" #nombre="ngModel" type="text" name="nombre" id="nombre" placeholder="Nombre curso">
+                    <input [(ngModel)]="curso.nombre" #nombre="ngModel" type="text" name="nombre" id="nombre"
+                        placeholder="Nombre curso" minlength="4" maxlength="40" required>
                     <label>Nombre</label>
+                    <div *ngIf="nombre.touched && !nombre.valid">
+                        <div *ngIf="nombre.errors.required">Nombre es requerido</div>
+                        <div *ngIf="nombre.errors.minlength">Nombre deber ser de al menos
+                            {{nombre.errors.minlength.requiredLength}} caracteres.</div>
+                    </div>
                 </div>
                 <div class="input-field col s6">
-                    <input [(ngModel)]="curso.descripcion" #descripion="ngModel" type="text" name="descripcion" id="descripcion" placeholder="Descripción curso">
+                    <input [(ngModel)]="curso.descripcion" #descripion="ngModel" type="text" name="descripcion"
+                        id="descripcion" placeholder="Descripción curso" minlength="10" maxlength="200" required>
                     <label>Descripción</label>
+                    <div *ngIf="descripcion.touched && !descripcion.valid">
+                        <div *ngIf="descripcion.errors.required">Descripcion es requerido</div>
+                        <div *ngIf="descripcion.errors.minlength">Descripcion deber ser de al menos
+                            {{descripcion.errors.minlength.requiredLength}} caracteres.</div>
+                    </div>
                 </div>
                 <div class="input-field col s6">
-                    <input [(ngModel)]="formador.nombre" #formador="ngModel" type="text" name="formador" id="formador" placeholder="Formador curso">
+                    <input [(ngModel)]="curso.formador" #formador="ngModel" type="text" name="formador" id="formador"
+                        placeholder="Formador curso">
                     <label>Formador</label>
                 </div>
                 <div class="input-field col s6">
-                    <input [(ngModel)]="precio.nombre" #precio="ngModel" type="text" name="precio" id="precio" placeholder="Precio curso">
+                    <input [(ngModel)]="curso.precio" #precio="ngModel" type="text" name="precio" id="precio"
+                        placeholder="Precio curso">
                     <label>Precio</label>
                 </div>
                 <div class="input-field col s6">
-                    <input [(ngModel)]="idioma.nombre" #idioma="ngModel" type="text" name="idioma" id="idioma" placeholder="Idioma curso">
+                    <input [(ngModel)]="curso.idioma" #idioma="ngModel" type="text" name="idioma" id="idioma"
+                        placeholder="Idioma curso">
                     <label>Idioma</label>
                 </div>
                 <div class="input-field col s6">
-                    <input [(ngModel)]="tecnologia.nombre" #tecnologia="ngModel" type="text" name="tecnologia" id="tecnologia" placeholder="Tecnología curso">
+                    <input [(ngModel)]="curso.tecnologia" #tecnologia="ngModel" type="text" name="tecnologia"
+                        id="tecnologia" placeholder="Tecnología curso">
                     <label>Tecnología</label>
                 </div>
                 <button type="submit" class="btn waves-effect waves-light orange right">Guardar
