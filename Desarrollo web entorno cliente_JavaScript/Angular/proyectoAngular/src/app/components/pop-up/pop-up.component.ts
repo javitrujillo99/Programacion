@@ -1,9 +1,11 @@
+import { Auth } from './../../models/auth';
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-pop-up',
@@ -20,18 +22,21 @@ export class PopUpComponent implements OnInit {
     private authService: AuthService
     ) {  }
 
-    public email:string = "";
-    public password:string="";
+    public loginForm = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', Validators.required),
+    })
 
   ngOnInit() {
+
   }
 
   closeDialog() {
     this.dialogRef.close();
   }
 
-  onLogin(): void {
-    this.authService.loginEmailUser(this.email, this.password)
+  onLogin(auth: Auth): void {
+    this.authService.loginEmailUser(auth.email, auth.password)
       .then( (res)=> {
         this.router.navigate(['']);
       }).catch( err => console.log('err', err.message));

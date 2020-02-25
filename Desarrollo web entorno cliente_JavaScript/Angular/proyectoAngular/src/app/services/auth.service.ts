@@ -1,3 +1,5 @@
+import { Auth } from './../models/auth';
+import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { map } from 'rxjs/operators';
@@ -7,10 +9,17 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
 
-  constructor(private afsAuth: AngularFireAuth) { }
-  registerUser(email:string, password:string) {
+  constructor(private afsAuth: AngularFireAuth, private db: AngularFirestore) { }
+
+  private authCollectionName = "usuarios";
+
+  saveUser(auth: Auth): Promise<DocumentReference> {
+    return this.db.collection(this.authCollectionName).add(auth);
+  }
+  
+  registerUser(auth: Auth) {
     return new Promise ((resolve, reject) => {
-      this.afsAuth.auth.createUserWithEmailAndPassword(email, password)
+      this.afsAuth.auth.createUserWithEmailAndPassword(auth.email, auth.password)
       .then(userData => resolve(userData),
       err => reject(err));
     });
