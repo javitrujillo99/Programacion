@@ -72,7 +72,7 @@ class GamesController extends Controller
             $fecha_actual = strtotime(date("d-m-Y"));
             $fecha_entrada = strtotime(date($request->input('fecha')));
             if($request->input('local') != $request->input('visitante')
-            && $fecha_entrada >= $fecha_actual) {
+            && $fecha_entrada >= $fecha_actual && $request->input('precio') >=  0) {
                 $local = $request->input('local');
                 $id_local = DB::table('equipos')
                     ->select('id')
@@ -104,6 +104,9 @@ class GamesController extends Controller
                 if ($fecha_entrada <= $fecha_actual) {
                     flash('LA FECHA DEL PARTIDO NO PUEDE PERTENECER AL PASADO')->error();
                 }
+                if ($request->input('precio') < 0) {
+                    flash('NO SE PUEDEN PONER PRECIOS EN NEGATIVO')->error();
+                }
                 else {
                     flash('NO SE PUEDEN PONER LOS MISMOS EQUIPOS')->error();
                 }
@@ -120,7 +123,7 @@ class GamesController extends Controller
             $fecha_actual = strtotime(date("d-m-Y"));
             $fecha_entrada = strtotime(date($request->input('fecha')));
             if($request->input('local') != $request->input('visitante')
-                && $fecha_entrada >= $fecha_actual) {
+                && $fecha_entrada >= $fecha_actual && $request->input('precio') >=  0) {
                 $local = $request->input('local');
                 $id_local = DB::table('equipos')
                     ->select('id')
@@ -150,6 +153,9 @@ class GamesController extends Controller
             } else {
                 if ($fecha_entrada <= $fecha_actual) {
                     flash('LA FECHA DEL PARTIDO NO PUEDE PERTENECER AL PASADO')->error();
+                }
+                if ($request->input('precio') < 0) {
+                    flash('NO SE PUEDEN PONER PRECIOS EN NEGATIVO')->error();
                 }
                 else {
                     flash('NO SE PUEDEN PONER LOS MISMOS EQUIPOS')->error();

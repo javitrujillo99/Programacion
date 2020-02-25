@@ -19,13 +19,15 @@ Route::get('/', function () {
 Route::get('games', 'GamesController@getIndex')->name('games');
 
 
-Route::get('games/show/{id}', 'GamesController@getShow')->middleware('auth');
+Route::get('games/show/{id}', 'GamesController@getShow')
+    ->middleware('auth')
+    ->middleware('verified');
 
 Route::get('games/edit/{id}', 'GamesController@getEdit')->middleware('auth');
 
 Route::get('games/create', 'GamesController@getCreate')->middleware('auth');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', function() {
     return redirect()->action('GamesController@getIndex');

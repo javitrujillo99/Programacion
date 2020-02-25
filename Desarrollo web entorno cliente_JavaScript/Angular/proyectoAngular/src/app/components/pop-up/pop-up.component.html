@@ -1,19 +1,18 @@
-<h2 mat-dialog-title>Iniciar sesión</h2>
-<div mat-dialog-content>
-    <form>
-        <mat-form-field>
-            <mat-label>Email</mat-label>
-            <input type="text" matInput placeholder="example@example.com">
-        </mat-form-field>
-        <br><br>
-        <mat-form-field>
-            <mat-label>Contraseña</mat-label>
-            <input type="password" matInput placeholder="Introduzca contraseña...">
-        </mat-form-field>
-    </form>
-</div>
-<div mat-dialog-actions>
-    <button class="waves-effect waves-light btn-small" mat-raised-button (click)="save()">Iniciar sesión</button>
-</div>
-<br><br>
-<a href="#">¿No tienes cuenta? Pulsa aquí para registrarte</a>
+<mat-form-field>
+  <form #formLogin="ngForm" (submit)="onLogin()">
+    <h1 class="h3 mb-3 font-weight-normal" *ngIf="!isError">Iniciar sesión</h1>
+    <div class="alert alert-danger" role="alert" *ngIf="isError">
+      Something is wrong!
+    </div>
+    <div class="form-group">
+      <input [(ngModel)]="email" type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+    </div>
+    <div class="form-group">
+      <input [(ngModel)] = "password" type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
+    </div>
+    <button type="submit" class="btn btn-lg btn-primary btn-block" (click)="closeDialog()">Iniciar sesión</button>
+    <div class="form-group">
+      <a (click)="closeDialog()" routerLink="/user/register" class="form-control login-user">¿No tienes cuenta? Regístrate aquí</a>
+    </div>
+  </form>
+</mat-form-field>
