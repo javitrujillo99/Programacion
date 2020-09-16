@@ -1,12 +1,14 @@
 <div class="content" id="content">
-    <div class="row">
+  <div class="row">
+    <div *ngFor='let p of peliculas'>
       <div class="card">
-        <a href="#" class="text-white">
-          <img class="card-img-top" src="../../../assets/images/badboys.jpg" alt="Card image cap">
+        <a routerLink="/pelicula/{{p.id}}" class="text-white">
+          <img class="card-img-top" src="../../../assets/images/{{p.imagen}}">
           <div class="card-body">
-            <h5>Bad boys</h5>
+            <h5>{{p.titulo}}</h5>
           </div>
-      </a>
+        </a>
       </div>
     </div>
+  </div>
 </div>

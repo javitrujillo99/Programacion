@@ -5,3 +5,7 @@
   background-color:black;
   border:1px solid;
 }
+label {
+  font-size: 18px;
+  float: left;
+}

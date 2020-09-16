@@ -1,3 +1,4 @@
+import { PeliculasService } from './services/peliculas.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -12,7 +13,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { PopUpComponent } from './components/pop-up/pop-up.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RegisterComponent } from './components/users/register/register.component';
-import { ComprasComponent } from './components/compras/compras.component';
 import { PeliculaComponent } from './components/pelicula/pelicula.component';
 import { FormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
@@ -20,6 +20,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,8 +31,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     PopUpComponent,
     RegisterComponent,
-    ComprasComponent,
     PeliculaComponent,
+    UsuariosComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    HttpClientModule
     ],
   entryComponents: [
     PopUpComponent
@@ -48,7 +51,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
-  providers: [AngularFireAuth, AngularFirestore],
+  providers: [AngularFireAuth, AngularFirestore, PeliculasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

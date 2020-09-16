@@ -1,3 +1,4 @@
+import { PeliculasService } from './../../services/peliculas.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContenidoComponent implements OnInit {
 
-  constructor() { }
+  peliculas: any[] = [];
+
+  constructor(protected pelSvc: PeliculasService) { }
 
   ngOnInit() {
+    this.pelSvc.getPeliculas().subscribe(
+      (data) => {
+        this.peliculas = data;
+        console.log(data);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 
 }
