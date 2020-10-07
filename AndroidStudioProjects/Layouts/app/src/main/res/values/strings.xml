@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Layouts</string>
+    <string name="togglebutton">ToggleButton</string>
+    <string name="mujer">Mujer</string>
+    <string name="hombre">Hombre</string>
+    <string name="bot_n">Botón</string>
+    <string name="karate">Karate</string>
+    <string name="baloncesto">Baloncesto</string>
 </resources>
