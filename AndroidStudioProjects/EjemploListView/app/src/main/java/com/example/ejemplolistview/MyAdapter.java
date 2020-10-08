@@ -11,6 +11,8 @@ import java.util.List;
 
 /**
  * Creamos nuestro propio Adapter (importante que extienda de BaseAdapter)
+ * El Adapter se tiene que crear porque sirve para los layouts dinámicos, es lo que hace que sean dinámicos y
+ * por ejemplo puedan cargar cosas de una base de datos.
  */
 public class MyAdapter extends BaseAdapter {
 
