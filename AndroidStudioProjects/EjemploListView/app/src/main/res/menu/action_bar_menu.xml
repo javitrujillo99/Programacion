@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- ifRoom es simplemente para que aparezca cuando esté el menú. Obligatorio poner el showAsAction -->
+    <item
+        android:id="@+id/añadirElemento"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="Añadir elemento"
+        app:showAsAction="ifRoom"
+
+        />
+
+
+
+</menu>

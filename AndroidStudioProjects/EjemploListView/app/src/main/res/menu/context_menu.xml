@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- El context menu es una especie de pop up que nos da unas opciones para utilizar
+    y lo tendremos en medio de la vista, no arriba en el actionMenu. Aparece en una pulsacion larga
+     de un item (mantener pulsado)-->
+    <item
+        android:id="@+id/borrarElemento"
+        android:title="Borrar"
+
+        />
+</menu>
