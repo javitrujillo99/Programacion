@@ -1,6 +1,7 @@
 package com.example.ejerciciogridview;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -118,10 +119,14 @@ public class MainActivity extends AppCompatActivity {
 
         //Creamos el switch con todas las opciones del context menu
         switch (item.getItemId()) {
-            case R.id.meGusta:
-                p.setDescripcion(p.getDescripcion() + "  ❤");
-                this.personajes.set(info.position, p);
-                Toast.makeText(MainActivity.this, "MARCADO COMO FAVORITO", Toast.LENGTH_LONG).show();
+            case R.id.editar:
+                //Creamos un alert dialog
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("Editar personaje");
+                builder.setMessage("Nombre: " + p.getNombre() + "\nDescripción: " + p.getDescripcion());
+                builder.setPositiveButton("Aceptar", null);
+                AlertDialog dialog = builder.create();
+                dialog.show();
                 this.adapter.notifyDataSetChanged(); //Esto es para notificar al adapter de los cambios
                 return true;
             case R.id.borrar:
