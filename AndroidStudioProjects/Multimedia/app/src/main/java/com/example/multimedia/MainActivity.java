@@ -61,11 +61,14 @@ public class MainActivity extends AppCompatActivity {
     //Esto es lo mismo que el setOnItemClickListener, coge el onClick ya del xml y se activa cuando se da click
     // a la view pasada en el método
     public void tomarFoto(View view) {
-        //Accedemos a la camara de fotos del dispositivo movil.
-        //Un intent es un mecanismo de software que permite a los usuarios coordinar las funciones
-        // de diferentes actividades para lograr una tarea.
-        // Esto significa que un intent es capaz de acceder al software de la cámara en este caso para ayudarnos
-        // a hacer la aplicación.
+        /**Accedemos a la camara de fotos del dispositivo movil.
+        Un intent es un mecanismo de software que permite a los usuarios coordinar las funciones
+         de diferentes actividades para lograr una tarea.
+         Dispone de 3 acciones que puede hacer:
+         1. Lanzar un servicio, como por ejemplo la cámara
+         2. Abrir una nueva Activity
+         3. Hacer un broadcast  */
+
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent, PETICION_FOTO);
 

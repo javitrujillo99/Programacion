@@ -51,7 +51,6 @@ public class PersonajesAdapter extends BaseAdapter {
         Personaje currentPersonaje = personajes.get(position);
 
         //Colocamos cada atributo del personaje en su layout correspondiente
-        //TODO: probar sin los casteos a ver si funciona
         ImageView foto = (ImageView) v.findViewById(R.id.foto);
         TextView nombre = (TextView) v.findViewById(R.id.nombre);
         TextView descripcion = (TextView) v.findViewById(R.id.descripcion);
