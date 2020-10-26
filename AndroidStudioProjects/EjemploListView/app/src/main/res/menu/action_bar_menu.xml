@@ -2,7 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- ifRoom es simplemente para que aparezca cuando esté el menú. Obligatorio poner el showAsAction -->
+    <!-- ifRoom es simplemente para que aparezca si cabe en el menú.
+     Si no cabe, se añadirá en el menú extendido. Obligatorio poner el showAsAction
+     Si ponemos never, se pondra directamente en el menu extendido   -->
     <item
         android:id="@+id/añadirElemento"
         android:icon="@android:drawable/ic_menu_add"

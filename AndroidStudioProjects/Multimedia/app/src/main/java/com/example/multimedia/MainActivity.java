@@ -4,12 +4,14 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -26,12 +28,27 @@ public class MainActivity extends AppCompatActivity {
     public static final int PETICION_GALERIA_VIDEOS = 4;
     public static final int MEDIA_FOTO = 5;
     public static final int MEDIA_VIDEO = 6;
+    private static final int REQUEST_CODE_FUNCTONE = 100;
+
+    ImageView btnMusica;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        btnMusica = findViewById(R.id.botonReproductorMusica);
+        pulsarBoton(btnMusica);
+    }
+
+    public void pulsarBoton(ImageView btn) {
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ReproductorMusica.class);
+                startActivityForResult(intent, REQUEST_CODE_FUNCTONE);
+            }
+        });
     }
 
 

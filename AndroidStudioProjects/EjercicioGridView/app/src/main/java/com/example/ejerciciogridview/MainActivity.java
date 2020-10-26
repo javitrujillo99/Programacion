@@ -120,6 +120,9 @@ public class MainActivity extends AppCompatActivity {
         //Creamos el switch con todas las opciones del context menu
         switch (item.getItemId()) {
             case R.id.editar:
+
+                //EL ALERT DIALOG NO VALE. UN ALERT ES SOLAMENTE PARA INFORMACION, Y ACEPTAR O CANCELAR.
+                // SI QUEREMOS EDITAR EL PERSONAJE, TIENE QUE SER UN DIALOG FRAGMENT, NO ALERTDIALOG
                 //Creamos un alert dialog
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("Editar personaje");
