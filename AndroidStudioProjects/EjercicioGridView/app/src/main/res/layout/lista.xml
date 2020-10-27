@@ -19,7 +19,7 @@
             android:layout_width="111dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:srcCompat="@drawable/goku" />
+            android:src="@drawable/goku" />
 
         <LinearLayout
             android:layout_width="288dp"
