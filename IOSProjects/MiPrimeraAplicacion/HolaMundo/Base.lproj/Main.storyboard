@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HolaMundo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Cómo te llamas?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWh-u7-hXo">
+                                <rect key="frame" x="20" y="84" width="374" height="32.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <color key="textColor" red="0.082649573063623749" green="0.22637790761573828" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OJx-WP-Vjc">
+                                <rect key="frame" x="20" y="146.5" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="nameTextField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="TOZ-Rd-w5Y"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSe-qE-lhs">
+                                <rect key="frame" x="154.5" y="432" width="105" height="42"/>
+                                <color key="backgroundColor" red="0.082649573059999995" green="0.22637790760000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                <state key="normal" title="Saludar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="sayHelloButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0oF-cQ-h0p"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bSe-qE-lhs" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="5qc-ML-CU1"/>
+                            <constraint firstItem="OJx-WP-Vjc" firstAttribute="top" secondItem="bWh-u7-hXo" secondAttribute="bottom" constant="30" id="EeX-O2-8KB"/>
+                            <constraint firstItem="OJx-WP-Vjc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Jzk-0W-OgU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bWh-u7-hXo" secondAttribute="trailing" constant="20" id="KZJ-NG-vix"/>
+                            <constraint firstItem="bSe-qE-lhs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="aLt-5o-YrM"/>
+                            <constraint firstItem="bWh-u7-hXo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="pJk-PP-Brn"/>
+                            <constraint firstItem="bWh-u7-hXo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="si7-I2-WEJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OJx-WP-Vjc" secondAttribute="trailing" constant="20" id="vB3-1v-7gE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="OJx-WP-Vjc" id="KDo-Fg-nAx"/>
+                        <outlet property="principalLabel" destination="bWh-u7-hXo" id="iSX-dx-CFp"/>
+                        <segue destination="vWB-V6-X52" kind="show" identifier="OpenSayHelloVC" id="8Qe-mI-Uyn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="75.669642857142847"/>
+        </scene>
+        <!--Say Hello View Controller-->
+        <scene sceneID="KtM-mn-AAs">
+            <objects>
+                <viewController id="vWB-V6-X52" customClass="SayHelloViewController" customModule="HolaMundo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EFB-cT-hVs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHG-am-GA5">
+                                <rect key="frame" x="20" y="20" width="69" height="22"/>
+                                <state key="normal" title="Cerrar">
+                                    <color key="titleColor" red="0.082649573059999995" green="0.22637790760000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <imageReference key="image" image="xmark" catalog="system" symbolScale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonAction:" destination="vWB-V6-X52" eventType="touchUpInside" id="PK8-H4-QrB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsO-0c-Akb">
+                                <rect key="frame" x="20" y="390.5" width="374" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YfX-AP-SaE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dsO-0c-Akb" firstAttribute="centerY" secondItem="YfX-AP-SaE" secondAttribute="centerY" id="51f-E6-t3x"/>
+                            <constraint firstItem="dsO-0c-Akb" firstAttribute="leading" secondItem="YfX-AP-SaE" secondAttribute="leading" constant="20" id="JE8-yI-iyv"/>
+                            <constraint firstItem="WHG-am-GA5" firstAttribute="top" secondItem="YfX-AP-SaE" secondAttribute="top" constant="20" id="ZJN-B6-XUf"/>
+                            <constraint firstItem="YfX-AP-SaE" firstAttribute="trailing" secondItem="dsO-0c-Akb" secondAttribute="trailing" constant="20" id="aKC-O0-jAM"/>
+                            <constraint firstItem="WHG-am-GA5" firstAttribute="leading" secondItem="YfX-AP-SaE" secondAttribute="leading" constant="20" id="hAw-Jp-Jna"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vUc-VT-AJR"/>
+                    <connections>
+                        <outlet property="sayHelloLabel" destination="dsO-0c-Akb" id="LL3-mf-oln"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PE6-3J-8WA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="953.62318840579712" y="75.669642857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
