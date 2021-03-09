@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Task View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="AddTaskViewController" customModule="TaskPlanification" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VEd-qD-zfi">
+                                <rect key="frame" x="16" y="84" width="382" height="250"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KJ5-3A-teT">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Localización" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sbA-tQ-DSW">
+                                        <rect key="frame" x="0.0" y="54" width="382" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fecha / Hora" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gEj-Oq-lzA">
+                                        <rect key="frame" x="0.0" y="108" width="382" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zIk-VP-3bL">
+                                        <rect key="frame" x="0.0" y="162" width="382" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Es importante" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBE-gp-HXt">
+                                                <rect key="frame" x="0.0" y="0.0" width="313" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4NC-5d-aLU">
+                                                <rect key="frame" x="333" y="0.0" width="51" height="34"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDD-Fx-TDC">
+                                        <rect key="frame" x="0.0" y="216" width="382" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Guardar"/>
+                                        <connections>
+                                            <action selector="saveButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I69-ts-jLU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUk-Ju-7u8">
+                                <rect key="frame" x="16" y="192" width="382" height="34"/>
+                                <connections>
+                                    <action selector="showDatePickerButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yfq-Rg-eWk"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jEz-VI-sZR">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="BBT-aw-JGw">
+                                        <rect key="frame" x="0.0" y="603" width="414" height="216"/>
+                                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                    </datePicker>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z0f-Cx-BHf">
+                                        <rect key="frame" x="0.0" y="559" width="414" height="44"/>
+                                        <items>
+                                            <barButtonItem title=" Aecptar" id="6KC-1y-YFx">
+                                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                                <connections>
+                                                    <action selector="aceptarPickerButtonAction:" destination="BYZ-38-t0r" id="f0p-wp-e4e"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="BBT-aw-JGw" firstAttribute="top" secondItem="z0f-Cx-BHf" secondAttribute="bottom" id="XSW-hX-djb"/>
+                                    <constraint firstItem="z0f-Cx-BHf" firstAttribute="leading" secondItem="jEz-VI-sZR" secondAttribute="leading" id="ujp-Ad-3P4"/>
+                                    <constraint firstAttribute="bottom" secondItem="BBT-aw-JGw" secondAttribute="bottom" constant="33" id="zK1-bd-ECh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VEd-qD-zfi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="17o-82-nbT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VEd-qD-zfi" secondAttribute="trailing" constant="16" id="1Yp-JE-Y4V"/>
+                            <constraint firstItem="zUk-Ju-7u8" firstAttribute="trailing" secondItem="gEj-Oq-lzA" secondAttribute="trailing" id="4sG-F2-9Kz"/>
+                            <constraint firstItem="zUk-Ju-7u8" firstAttribute="top" secondItem="gEj-Oq-lzA" secondAttribute="top" id="F3W-BX-vUj"/>
+                            <constraint firstItem="jEz-VI-sZR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="44" id="GKY-2s-KbH"/>
+                            <constraint firstAttribute="bottom" secondItem="jEz-VI-sZR" secondAttribute="bottom" id="I08-bh-dpd"/>
+                            <constraint firstItem="zUk-Ju-7u8" firstAttribute="leading" secondItem="gEj-Oq-lzA" secondAttribute="leading" id="Lhv-Gv-bkF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jEz-VI-sZR" secondAttribute="trailing" id="RVH-kt-ymc"/>
+                            <constraint firstItem="VEd-qD-zfi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="oFD-9j-Joa"/>
+                            <constraint firstItem="zUk-Ju-7u8" firstAttribute="bottom" secondItem="gEj-Oq-lzA" secondAttribute="bottom" id="oTi-wb-eui"/>
+                            <constraint firstItem="jEz-VI-sZR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tyo-Bg-glG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="BBT-aw-JGw" id="0aG-QP-Nm7"/>
+                        <outlet property="dateTimeTextField" destination="gEj-Oq-lzA" id="nV7-bS-zRe"/>
+                        <outlet property="isImportantSwitch" destination="FBE-gp-HXt" id="MWy-JP-bku"/>
+                        <outlet property="locationTextField" destination="sbA-tQ-DSW" id="Un3-Tz-eJB"/>
+                        <outlet property="nameTextField" destination="KJ5-3A-teT" id="gfw-t9-icu"/>
+                        <outlet property="pickerView" destination="jEz-VI-sZR" id="Ini-pt-GDb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

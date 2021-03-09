@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AudioPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1024px-Bandera_de_España_1978" translatesAutoresizingMaskIntoConstraints="NO" id="UIx-bi-nlX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UIx-bi-nlX" secondAttribute="height" id="zX8-qU-eoM"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="UaL-U8-0Lv">
+                                <rect key="frame" x="20" y="468" width="374" height="62"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HR4-xL-VKY">
+                                        <rect key="frame" x="0.0" y="0.0" width="98" height="62"/>
+                                        <color key="backgroundColor" red="1" green="0.0016834623899756318" blue="0.86322344555572728" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
+                                        <state key="normal" image="play.fill" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bHs-q1-hjW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOg-ip-zhX">
+                                        <rect key="frame" x="138" y="0.0" width="98" height="62"/>
+                                        <color key="backgroundColor" red="1" green="0.0016834623899999999" blue="0.86322344559999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="pause.fill" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pauseButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ggq-eX-Llp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ak-xn-ckh">
+                                        <rect key="frame" x="276" y="0.0" width="98" height="62"/>
+                                        <color key="backgroundColor" red="1" green="0.0016834623899999999" blue="0.86322344559999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="stop.fill" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="stopButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v9t-SM-n65"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="31C-7c-36E">
+                                <rect key="frame" x="20" y="560" width="374" height="62.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYF-ux-gZO">
+                                        <rect key="frame" x="0.0" y="0.0" width="167" height="62.5"/>
+                                        <color key="backgroundColor" red="1" green="0.0016834623899999999" blue="0.86322344559999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
+                                        <state key="normal" image="gobackward.10" catalog="system"/>
+                                        <connections>
+                                            <action selector="goBackward10:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pjj-9d-QPv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BH-9B-uEm">
+                                        <rect key="frame" x="207" y="0.0" width="167" height="62.5"/>
+                                        <color key="backgroundColor" red="1" green="0.0016834623899999999" blue="0.86322344559999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="goforward.10" catalog="system"/>
+                                        <connections>
+                                            <action selector="goForward10:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ae1-i9-B3a"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lXu-eP-QGw">
+                                <rect key="frame" x="18" y="662.5" width="378" height="31"/>
+                                <color key="tintColor" red="1" green="0.0016834623899999999" blue="0.86322344559999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="volumenButtonAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="YfO-Kh-SQI"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lXu-eP-QGw" firstAttribute="top" secondItem="31C-7c-36E" secondAttribute="bottom" constant="40" id="4sJ-0Q-OoZ"/>
+                            <constraint firstItem="lXu-eP-QGw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6g3-dr-N6Y"/>
+                            <constraint firstItem="31C-7c-36E" firstAttribute="top" secondItem="UaL-U8-0Lv" secondAttribute="bottom" constant="30" id="98V-q9-1Ep"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lXu-eP-QGw" secondAttribute="trailing" constant="20" id="DDe-VA-P5o"/>
+                            <constraint firstItem="31C-7c-36E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="MBb-bk-el5"/>
+                            <constraint firstItem="UIx-bi-nlX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QDE-Kb-qg3"/>
+                            <constraint firstItem="UIx-bi-nlX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QeY-If-KEO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="31C-7c-36E" secondAttribute="trailing" constant="20" id="T9L-SV-tKF"/>
+                            <constraint firstItem="UaL-U8-0Lv" firstAttribute="top" secondItem="UIx-bi-nlX" secondAttribute="bottom" constant="10" id="am8-0D-VYe"/>
+                            <constraint firstItem="UaL-U8-0Lv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cE3-wZ-xIU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UaL-U8-0Lv" secondAttribute="trailing" constant="20" id="cbP-kn-FBW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UIx-bi-nlX" secondAttribute="trailing" id="ckH-RT-YVL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="volumenControl" destination="lXu-eP-QGw" id="zod-5A-YEI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-197.10144927536234" y="71.651785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="1024px-Bandera_de_España_1978" width="512" height="341"/>
+        <image name="gobackward.10" catalog="system" width="121" height="128"/>
+        <image name="goforward.10" catalog="system" width="121" height="128"/>
+        <image name="pause.fill" catalog="system" width="116" height="128"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="stop.fill" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
