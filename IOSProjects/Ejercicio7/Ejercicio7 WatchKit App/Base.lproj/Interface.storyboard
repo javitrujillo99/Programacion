@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17701" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch44"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17500"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Ejercicio7_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="136" alignment="left" text="0" textAlignment="center" id="Uxn-cR-lNq"/>
+                        <group width="136" height="31" alignment="left" id="ARX-S9-A8H">
+                            <items>
+                                <button width="30" height="40" alignment="left" title="8" id="01S-mr-hEg">
+                                    <connections>
+                                        <action selector="press8" destination="AgC-eL-Hgc" id="Z6F-VM-EoW"/>
+                                    </connections>
+                                </button>
+                                <button width="30" height="40" alignment="left" title="9" id="Zee-VC-wxY">
+                                    <connections>
+                                        <action selector="press9" destination="AgC-eL-Hgc" id="39y-tn-p4Q"/>
+                                    </connections>
+                                </button>
+                                <button width="30" height="40" alignment="left" title="7" id="Vhd-Sy-t84">
+                                    <connections>
+                                        <action selector="press7" destination="AgC-eL-Hgc" id="SHs-ae-Ewn"/>
+                                    </connections>
+                                </button>
+                                <button width="34" height="40" alignment="left" title="AC" id="f63-R6-h3J">
+                                    <color key="backgroundColor" red="1" green="0.49725898499999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="pressACButton" destination="AgC-eL-Hgc" id="Kl4-nu-YLg"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="136" height="31" alignment="left" id="j7h-pn-bvZ">
+                            <items>
+                                <button width="30" height="40" alignment="left" title="6" id="87y-Eh-nMJ">
+                                    <connections>
+                                        <action selector="press6" destination="AgC-eL-Hgc" id="eQq-4G-9mR"/>
+                                    </connections>
+                                </button>
+                                <button width="30" height="40" alignment="left" title="5" id="7zO-bc-XT0">
+                                    <connections>
+                                        <action selector="press5" destination="AgC-eL-Hgc" id="0Dq-Lc-aCt"/>
+                                    </connections>
+                                </button>
+                                <button width="30" height="40" alignment="left" title="4" id="Fgp-4u-eX3">
+                                    <connections>
+                                        <action selector="press4" destination="AgC-eL-Hgc" id="4MV-KI-8Xo"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="136" height="31" alignment="left" id="CZG-BG-1QP">
+                            <items>
+                                <button width="30" height="40" alignment="left" title="3" id="d3G-U0-oH3">
+                                    <connections>
+                                        <action selector="press3" destination="AgC-eL-Hgc" id="8ds-13-FMQ"/>
+                                    </connections>
+                                </button>
+                                <button width="30" height="40" alignment="left" title="2" id="BgX-Vj-c9Z">
+                                    <connections>
+                                        <action selector="press2" destination="AgC-eL-Hgc" id="Ein-Uv-QjL"/>
+                                    </connections>
+                                </button>
+                                <button width="30" height="40" alignment="left" title="1" id="Hql-51-vZ8">
+                                    <connections>
+                                        <action selector="press1" destination="AgC-eL-Hgc" id="pop-PH-R4q"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="136" height="37" alignment="left" id="rAN-cB-Qob">
+                            <items>
+                                <button width="42" height="35" alignment="left" title="0" id="GoR-6d-bAN">
+                                    <connections>
+                                        <action selector="press0" destination="AgC-eL-Hgc" id="arX-c3-Ye8"/>
+                                    </connections>
+                                </button>
+                                <button width="21" height="36" alignment="left" title="+" id="ZFC-Ok-Evt">
+                                    <color key="backgroundColor" red="1" green="0.49725898500435928" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="pressAddition" destination="AgC-eL-Hgc" id="JLp-f7-AYW"/>
+                                    </connections>
+                                </button>
+                                <button width="21" height="37" alignment="left" title="-" id="scV-XT-2U4">
+                                    <color key="backgroundColor" red="1" green="0.49725898499999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="pressSubstraction" destination="AgC-eL-Hgc" id="cE7-ko-I0Z"/>
+                                    </connections>
+                                </button>
+                                <button width="40" height="37" alignment="left" title="=" id="a4N-VA-0uq">
+                                    <color key="backgroundColor" red="1" green="0.49725898499999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="pressEqualButton" destination="AgC-eL-Hgc" id="Qe1-0D-Oza"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="additionButton" destination="ZFC-Ok-Evt" id="c1u-tw-3hF"/>
+                        <outlet property="resultLabel" destination="Uxn-cR-lNq" id="IWh-VO-sU6"/>
+                        <outlet property="substractionButton" destination="scV-XT-2U4" id="vqe-Uf-WSX"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="219.52173913043478" y="329.375"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" numberOfLines="0" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Ejercicio7_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="Niz-AI-uX2">
+            <objects>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="Ejercicio7_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="345"/>
+        </scene>
+    </scenes>
+</document>
