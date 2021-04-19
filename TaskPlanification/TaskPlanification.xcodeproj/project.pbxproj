@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		453EA556260139910019A845 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453EA555260139910019A845 /* TaskTableViewCell.swift */; };
+		453EA55926013C670019A845 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453EA55826013C670019A845 /* TasksTableViewController.swift */; };
 		CD193CCC25CC0CB3009740AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD193CCB25CC0CB3009740AA /* AppDelegate.swift */; };
 		CD193CCE25CC0CB3009740AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD193CCD25CC0CB3009740AA /* SceneDelegate.swift */; };
 		CD193CD325CC0CB3009740AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD193CD125CC0CB3009740AA /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		453EA555260139910019A845 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		453EA55826013C670019A845 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
 		CD193CC825CC0CB3009740AA /* TaskPlanification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskPlanification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD193CCB25CC0CB3009740AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD193CCD25CC0CB3009740AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				CD193CDC25CC0CB5009740AA /* Info.plist */,
 				CD193CD425CC0CB3009740AA /* TaskPlanification.xcdatamodeld */,
 				CD193CE625D1AF7E009740AA /* AddTaskViewController.swift */,
+				453EA555260139910019A845 /* TaskTableViewCell.swift */,
+				453EA55826013C670019A845 /* TasksTableViewController.swift */,
 			);
 			path = TaskPlanification;
 			sourceTree = "<group>";
@@ -140,8 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				453EA55926013C670019A845 /* TasksTableViewController.swift in Sources */,
 				CD193CCC25CC0CB3009740AA /* AppDelegate.swift in Sources */,
 				CD193CE725D1AF7E009740AA /* AddTaskViewController.swift in Sources */,
+				453EA556260139910019A845 /* TaskTableViewCell.swift in Sources */,
 				CD193CD625CC0CB3009740AA /* TaskPlanification.xcdatamodeld in Sources */,
 				CD193CCE25CC0CB3009740AA /* SceneDelegate.swift in Sources */,
 			);

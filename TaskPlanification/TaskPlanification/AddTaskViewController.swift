@@ -49,9 +49,11 @@ class AddTaskViewController: UIViewController {
     //MARK: - Private methods
     
     private func addTask() {
+        //AppDelegate es la clase principal donde tenemos todas las clases necesarias. Aqui llamamos a las clases de Coredata
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
+        //Para usar NSEntityDescription y la otra hay que importar CoreData
         let entity = NSEntityDescription.entity(forEntityName: "Task", in: context)
         let newTask = NSManagedObject(entity: entity!, insertInto: context)
         
