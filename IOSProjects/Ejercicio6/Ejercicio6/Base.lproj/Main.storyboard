@@ -1,41 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xoz-d5-IPR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uFp-6t-nBj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Teams View Controller-->
-        <scene sceneID="WmI-Me-g71">
+        <scene sceneID="cXQ-0a-L4x">
             <objects>
-                <viewController id="xoz-d5-IPR" customClass="TeamsViewController" customModule="Ejercicio6" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aFY-2k-bOe">
+                <viewController id="uFp-6t-nBj" customClass="TeamsViewController" customModule="Ejercicio6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RXa-cT-DzD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wdc-V9-9iL">
-                                <rect key="frame" x="57" y="336" width="300" height="225"/>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tM0-gI-4wD">
+                                <rect key="frame" x="0.0" y="351" width="414" height="239"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ATLANTA HAWKS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQq-Nt-lwM">
+                                <rect key="frame" x="0.0" y="124" width="414" height="139"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="BKN" image="bkn"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MF-8f-gdx">
+                                <rect key="frame" x="86" y="621" width="241" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Ver jugadores">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="pulsarBKN:" destination="xoz-d5-IPR" eventType="touchUpInside" id="1Cx-ff-yeM"/>
+                                    <action selector="pressButton:" destination="uFp-6t-nBj" eventType="touchUpInside" id="5KH-R9-P60"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ATL" translatesAutoresizingMaskIntoConstraints="NO" id="xVG-V4-S2j">
+                                <rect key="frame" x="137" y="231" width="138" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NBA" translatesAutoresizingMaskIntoConstraints="NO" id="bgN-pK-jdh">
+                                <rect key="frame" x="86" y="44" width="240" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="L6G-Sh-sYs"/>
+                        <viewLayoutGuide key="safeArea" id="iSp-pG-X8B"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="bknButton" destination="Wdc-V9-9iL" id="eTJ-AG-N4h"/>
-                        <segue destination="aNm-Jd-mKD" kind="show" identifier="OpenPlayersVC" id="2Rh-dR-hU0"/>
+                        <outlet property="teamImageView" destination="xVG-V4-S2j" id="feS-7I-YMq"/>
+                        <outlet property="teamLabel" destination="UQq-Nt-lwM" id="rAz-oc-j8g"/>
+                        <outlet property="teamsPicker" destination="tM0-gI-4wD" id="6cb-9c-qj2"/>
+                        <segue destination="aNm-Jd-mKD" kind="show" identifier="OpenPlayersVC" id="nwv-ko-due"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JUR-zV-i13" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iiV-Q1-bBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1223.1884057971015" y="43.526785714285715"/>
+            <point key="canvasLocation" x="-1352.1739130434785" y="43.526785714285715"/>
         </scene>
         <!--Players By Team Table View Controller-->
         <scene sceneID="Ash-AK-iY5">
@@ -114,7 +140,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bkn" width="900" height="760"/>
+        <image name="ATL" width="1840" height="1879"/>
+        <image name="NBA" width="1250" height="850"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

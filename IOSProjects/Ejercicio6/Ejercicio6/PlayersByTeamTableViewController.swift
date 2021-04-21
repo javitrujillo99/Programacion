@@ -11,11 +11,16 @@ class PlayersByTeamTableViewController: UITableViewController {
     
     //Creo un array que contenga todos los jugadores del equipo recuperadas del api
     var playersArray: [Player] = []
+    
+    
+    //Esta variable "team", es la que se recoge en el segue. Es muy importante, ya que lo que recoge es el "shortName" del equipo recogido, que son unas siglas de ese equipo que son las que luego se introducen en la URL de la api. Esas siglas están escritas así porque son las que la API reconoce para mostrar cada equipo en cuestión. Es decir, no se puede tocar el shortname "ATL" del equipo con nombre "Atlanta Hawks", porque ese es el id por que el la API tiene guardado a ese equipo, y si se modifica, no se cargarán los jugadores en la API y por tanto en esta aplicación.
     var team = ""
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Cargamos la función principal
         loadData()
 
         //LA URL usada para esto es: https://fly.sportsdata.io/v3/nba/stats/json/Players/BKN?key=b52544ea304746c78679aab147b715da
