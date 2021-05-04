@@ -22,14 +22,13 @@ class PlayerTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
     //Creamos la función para cargar los jugadores en cada celda
     public func loadPlayer(player: Player) {
         
         //Insertamos los datos del jugador en la celda
-        nameLabel.text = player.fantasyDraftName
+        nameLabel.text = player.fanDuelName
         jerseyLabel.text = player.jersey?.description
         positionLabel.text = player.position
     }

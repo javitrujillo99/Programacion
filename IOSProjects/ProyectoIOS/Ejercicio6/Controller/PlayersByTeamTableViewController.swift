@@ -16,8 +16,8 @@ class PlayersByTeamTableViewController: UITableViewController {
     //Esta variable "team", es la que se recoge en el segue. Es muy importante, ya que lo que recoge es el "shortName" del equipo recogido, que son unas siglas de ese equipo que son las que luego se introducen en la URL de la api. Esas siglas están escritas así porque son las que la API reconoce para mostrar cada equipo en cuestión. Es decir, no se puede tocar el shortname "ATL" del equipo con nombre "Atlanta Hawks", porque ese es el id por que el la API tiene guardado a ese equipo, y si se modifica, no se cargarán los jugadores en la API y por tanto en esta aplicación.
     var team = ""
     
-    var viewOpened = false
-    
+    //Inicializamos la variable del jugador actual que luego utilizaremos para darle datos y pasarlos a la próxima pantalla con el segue
+    var currentPlayer = Player(id: 0, sportsDataID: "", status: "", teamID: 0, team: "", jersey: 0, positionCategory: "", position: "", firstName: "", lastName: "", height: 1, weight: 1, birthdate: "", birthCity: "", birthState: "", birthCountry: "", highSchool: "", college: "", salary: 1, photoUrl: "", experience: 1, sportRadarPlayerID: "", rotoworldPlayerID: 1, rotoWirePlayerID: 1, fantasyAlarmPlayerID: 1, statsPlayerID: 1, sportsDirectPlayerID: 1, xmlTeamPlayerID: 1, injuryStatus: "", injuryBodyPart: "", injuryStartDate: "", injuryNotes: "", fanDuelPlayerID: 1, draftKingsPlayerID: 1, yahooPlayerID: 1, fanDuelName: "", draftKingsName: "", yahooName: "", depthChartPosition: "", depthChartOrder: 1, globalTeamID: 1, fantasyDraftName: "", fantasyDraftPlayerID: 1, usaTodayPlayerID: 1, usaTodayHeadshotUrl: "", usaTodayHeadshotNoBackgroundUrl: "", usaTodayHeadshotUpdated: "", usaTodayHeadshotNoBackgroundUpdated: "", nbaDotComPlayerID: 1)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,11 +44,11 @@ class PlayersByTeamTableViewController: UITableViewController {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 guard let data = data else { return }
                 
-               //Descomprimimos el json para mostrarlo por consola y poder comprobar que va bien
-                if let jsonString = String(data: data, encoding: .utf8) {
-                    print(jsonString)
-                }
-                
+//               //Descomprimimos el json para mostrarlo por consola y poder comprobar que va bien
+//                if let jsonString = String(data: data, encoding: .utf8) {
+//                    print(jsonString)
+//                }
+    
                 //Recuperamos los datos para añadirlos a nuestro array
                 do {
                     let player = try JSONDecoder().decode([Player].self, from: data)
@@ -82,6 +82,7 @@ class PlayersByTeamTableViewController: UITableViewController {
         //Convertimos la celda en tipo PlayerTableViewCell
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCellId", for: indexPath) as! PlayerTableViewCell
         
+        
         //Jugador actual
         let currentPlayer = playersArray[indexPath.row]
 
@@ -91,26 +92,19 @@ class PlayersByTeamTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //Esto es para que muestre la pantalla del jugador que está seleccionado
+        currentPlayer = playersArray[indexPath.row]
+        performSegue(withIdentifier: "OpenStatsVC", sender: self)
+    }
+        
     //MARK: - Performing segue
     
-    
-    @IBAction func pressButton(_ sender: Any) {
-        performSegue(withIdentifier: "OpenStatsVC", sender: self)
-        viewOpened = true
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (viewOpened) {
-            // Obtenemos el índice de la celda que está tapped
-            let indexPath = tableView.indexPathForSelectedRow
-            // Obtenemos la fila de esa celda
-            let index = indexPath?.row
-        
-            // Le damos el destino al segue
-            let statsViewController: StatsViewController = segue.destination as! StatsViewController
+        // Le damos el destino al segue
+        let statsViewController: StatsViewController = segue.destination as! StatsViewController
             
-            // Pass on the data to the Detail ViewController by setting it's indexPathRow value
-            statsViewController.playerID = playersArray[index!].id
-        }
+        // Pass on the data to the Detail ViewController by setting it's indexPathRow value
+        statsViewController.playerID = currentPlayer.id
     }
 }

@@ -17,7 +17,7 @@ class TeamsViewController: UIViewController, UIPickerViewDelegate ,UIPickerViewD
     //Creamos e inicializamos el array de equipos con el que rellenaremos el picker
     var teamsArray: [Team] = [Team]()
     
-    //Variable del equipo actual
+    //Variable del equipo actual que luego utilizaremos para pasarlo por el segue
     var currentTeam = Team(name: "", shortName: "")
     
     //Creamos las constantes con los equipos que vamos a introducir en el array
@@ -95,7 +95,6 @@ class TeamsViewController: UIViewController, UIPickerViewDelegate ,UIPickerViewD
     
     //MARK: - Picker data source
     
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -136,6 +135,7 @@ class TeamsViewController: UIViewController, UIPickerViewDelegate ,UIPickerViewD
                 currentTeam = teamsArray[i]
             }
         }
+        //Hacemos que la variable team del jugador de la siguiente pantalla sea la variable team del currentTeam de esta pantalla, pasándose de una pantalla a otra
         playersByTeamTableViewController.team = currentTeam.shortName
     }
     

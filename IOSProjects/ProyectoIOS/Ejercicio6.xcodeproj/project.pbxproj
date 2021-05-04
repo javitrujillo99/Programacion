@@ -18,7 +18,7 @@
 		457C6244262DF29800110D19 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457C6243262DF29800110D19 /* Team.swift */; };
 		45DAEAB3262852AE00A4A108 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DAEAB2262852AE00A4A108 /* Player.swift */; };
 		45DAEAB726288FB000A4A108 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DAEAB626288FB000A4A108 /* PlayerTableViewCell.swift */; };
-		45ECFB0226308EFE00C66D12 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ECFB0126308EFE00C66D12 /* Stats.swift */; };
+		45EDE2C9263A2CF50019D3CB /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EDE2C8263A2CF50019D3CB /* Stats.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		457C6243262DF29800110D19 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		45DAEAB2262852AE00A4A108 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		45DAEAB626288FB000A4A108 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
-		45ECFB0126308EFE00C66D12 /* Stats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stats.swift; path = ../../../../../../../.Trash/Stats.swift; sourceTree = "<group>"; };
+		45EDE2C8263A2CF50019D3CB /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 			children = (
 				45DAEAB2262852AE00A4A108 /* Player.swift */,
 				457C6243262DF29800110D19 /* Team.swift */,
-				45ECFB0126308EFE00C66D12 /* Stats.swift */,
+				45EDE2C8263A2CF50019D3CB /* Stats.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,7 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				457C6244262DF29800110D19 /* Team.swift in Sources */,
-				45ECFB0226308EFE00C66D12 /* Stats.swift in Sources */,
+				45EDE2C9263A2CF50019D3CB /* Stats.swift in Sources */,
 				45DAEAB3262852AE00A4A108 /* Player.swift in Sources */,
 				4549D7AE2630732200D0A2DA /* StatsViewController.swift in Sources */,
 				4562B647261B740600B85227 /* AppDelegate.swift in Sources */,
